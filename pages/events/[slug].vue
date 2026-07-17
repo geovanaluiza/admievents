@@ -67,7 +67,7 @@ const printPage = () => window.print()
         <div class="event-hero-copy">
           <div class="event-meta">
             <span :class="`badge ${colors.tag}`">
-              {{ event.type === 'discover' ? '🏔️ Day Event' : '🌙 Overnight' }}
+              {{ event.emoji }} {{ event.name }}
             </span>
             <span class="badge badge-dark">{{ selectedInst.timeStart }} – {{ selectedInst.timeEnd }}</span>
           </div>

@@ -405,7 +405,7 @@ const _routes = [
   {
     name: "events-slug",
     path: "/events/:slug()",
-    component: () => import('./_slug_-DgZ2JQbL.mjs')
+    component: () => import('./_slug_-CawnvOqD.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
