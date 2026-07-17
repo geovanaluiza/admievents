@@ -32,7 +32,7 @@ const year = new Date().getFullYear()
 
       <p class="foot-legal">
         © {{ year }} Northwest University. All rights reserved.
-        · Questions? <a href="mailto:visit@northwestu.edu" style="color: rgba(240,244,248,.55);">visit@northwestu.edu</a>
+        · Questions? <a href="mailto:admissions@northwestu.edu" style="color: rgba(240,244,248,.55);">admissions@northwestu.edu</a>
       </p>
     </div>
   </footer>

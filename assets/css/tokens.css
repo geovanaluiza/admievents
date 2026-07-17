@@ -33,8 +33,8 @@
   --accent-coral:     var(--nu-tour);
   --accent-coral-light: rgba(251, 217, 69, 0.15);
   --accent-coral-dark:  var(--nu-gold);
-  --accent-teal:    var(--nu-evergreen);
-  --accent-teal-light: rgba(4, 80, 92, 0.1);
+  --accent-teal:    var(--nu-leaf);
+  --accent-teal-light: rgba(68, 186, 130, 0.12);
   --accent-gold:    var(--nu-tour);
   --accent-gold-light: rgba(251, 217, 69, 0.15);
   --accent-gold-dark:  var(--nu-gold);
@@ -95,7 +95,7 @@
   --shadow-lg:  0 12px 32px rgba(3, 76, 135, 0.11), 0 4px 8px rgba(3, 76, 135, 0.07);
   --shadow-xl:  0 24px 48px rgba(3, 76, 135, 0.16);
   --shadow-glow-gold: 0 8px 32px rgba(251, 217, 69, 0.35);
-  --shadow-glow-teal: 0 8px 32px rgba(4, 80, 92, 0.30);
+  --shadow-glow-teal: 0 8px 32px rgba(68, 186, 130, 0.30);
   --shadow-glow-blue: 0 8px 32px rgba(0, 104, 187, 0.30);
 
   /* ---- Transitions ---- */

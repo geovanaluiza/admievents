@@ -110,6 +110,14 @@ const printPage = () => window.print()
             <a :href="event.swoopShopUrl" target="_blank" rel="noopener" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,.4); color: #fff;">
               🛍️ Swoop Shop
             </a>
+            <button class="btn btn-outline btn-lg no-print" style="border-color: rgba(255,255,255,.4); color: #fff;" @click="printPage">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <polyline points="6 9 6 2 18 2 18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="6" y="14" width="12" height="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Print event info
+            </button>
           </div>
         </div>
 
@@ -358,16 +366,133 @@ const printPage = () => window.print()
         <div class="contact-card card-ghost">
           <h3 class="contact-title">Questions?</h3>
           <p class="contact-body">Our admissions team replies within one business day.</p>
-          <a href="mailto:visit@northwestu.edu" class="contact-link">
+          <a href="mailto:admissions@northwestu.edu" class="contact-link">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
               <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
-            visit@northwestu.edu
+            admissions@northwestu.edu
           </a>
         </div>
 
       </aside>
+    </div>
+
+    <!-- ── Print-only content ── -->
+    <div class="print-only-page">
+      <!-- Branded print header -->
+      <header class="print-header">
+        <svg class="print-shield" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M32 4L8 14v18c0 14 24 22 24 22s24-8 24-22V14L32 4z" fill="#001729" stroke="#fbd945" stroke-width="2"/>
+          <text x="32" y="38" text-anchor="middle" font-size="14" font-weight="900" fill="#fbd945" font-family="system-ui">NU</text>
+        </svg>
+        <p class="print-event-type">Northwest University · Admissions Event</p>
+        <h1 class="print-event-name">{{ event.name }}</h1>
+        <p class="print-event-tagline">{{ event.tagline }}</p>
+        <div class="print-event-meta">
+          <div class="print-meta-item">
+            <div class="print-meta-icon">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <p class="print-meta-label">Date</p>
+              <p class="print-meta-value">{{ selectedInst.label }}</p>
+            </div>
+          </div>
+          <div class="print-meta-item">
+            <div class="print-meta-icon">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/><polyline points="12 6 12 12 16 14" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <p class="print-meta-label">Time</p>
+              <p class="print-meta-value">{{ selectedInst.timeStart }} – {{ selectedInst.timeEnd }}</p>
+            </div>
+          </div>
+          <div class="print-meta-item">
+            <div class="print-meta-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="white" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="white" stroke-width="2"/></svg>
+            </div>
+            <div>
+              <p class="print-meta-label">Location</p>
+              <p class="print-meta-value">Northwest University, Kirkland WA</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="print-body">
+        <!-- Registration + QR -->
+        <div class="print-reg-box">
+          <div class="print-qr-placeholder" aria-hidden="true">
+            <div class="print-qr-placeholder-inner"></div>
+          </div>
+          <div>
+            <p class="print-reg-label">Register at</p>
+            <p class="print-reg-url">{{ event.registrationUrl }}</p>
+          </div>
+        </div>
+
+        <!-- Schedule -->
+        <section>
+          <h2 class="print-section-title">Schedule</h2>
+          <table class="print-schedule">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Activity</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in event.schedule" :key="item.time + item.title">
+                <td class="print-time">{{ item.time }}</td>
+                <td>
+                  <p class="print-title">{{ item.title }}</p>
+                  <span v-if="item.track && item.track !== 'all'" :class="`print-track print-track-${item.track}`">{{ item.track }}</span>
+                </td>
+                <td>
+                  <p class="print-desc">{{ item.description }}</p>
+                  <p v-if="item.location" class="print-desc" style="font-style: italic; margin-top: 2pt;">📍 {{ item.location }}</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- What to bring -->
+        <section>
+          <h2 class="print-section-title">What to bring</h2>
+          <div class="print-bring">
+            <div v-for="item in event.bringItems" :key="item.text" class="print-bring-item">
+              <span class="print-bring-icon" aria-hidden="true">{{ item.icon }}</span>
+              <span class="print-bring-text">{{ item.text }}</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dress code -->
+        <section>
+          <h2 class="print-section-title">Dress code</h2>
+          <div class="print-dress">
+            <div class="print-dress-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z" stroke="#001729" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div>
+              <p class="print-dress-label">Dress code</p>
+              <p class="print-dress-value">{{ event.dressCode }}</p>
+              <p class="print-dress-tip">{{ event.dressCodeTip }}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="print-footer">
+          <span>Northwest University · Kirkland, WA · northwestu.edu</span>
+          <span>Questions? <a :href="`mailto:${'admissions@northwestu.edu'}`">admissions@northwestu.edu</a> · (425) 555-1234</span>
+        </footer>
+      </div>
     </div>
 
     <SiteFooter />
@@ -756,19 +881,329 @@ const printPage = () => window.print()
 }
 .contact-link:hover { color: var(--accent-coral); }
 
+/* ── Print-only elements (hidden on screen) ── */
+.print-only-page,
+.print-header,
+.print-body,
+.print-section-title,
+.print-schedule,
+.print-bring,
+.print-dress,
+.print-reg-box,
+.print-footer { display: none; }
+
 /* ── Print overrides ────────────────────────────────────── */
 @media print {
-  .event-hero { background: white; color: black; padding: 24pt 0; }
-  .hero-bg-overlay, .hero-bg-img { display: none; }
-  .event-hero-inner { display: block; }
-  .event-ctas, .video-placeholder, .no-print, .event-sidebar, .reg-card, .badge-generator, .contact-card, .faid-section { display: none !important; }
-  .event-layout { display: block; }
-  .event-main { max-width: 100%; }
-  .event-section { page-break-inside: avoid; margin-bottom: 24pt; }
-  .timeline-item { page-break-inside: avoid; }
-  .event-section-title { font-size: 16pt; }
-  .event-body-text { font-size: 11pt; }
-  h1.event-title { font-size: 24pt; color: black; }
-  .event-tagline { font-size: 12pt; color: #444; }
+  :root {
+    --print-navy: #001729;
+    --print-gold: #fbd945;
+    --print-blue: #0068bb;
+  }
+
+  body { background: white !important; color: black !important; }
+
+  /* ── Print-only event header ── */
+  .print-header {
+    display: block !important;
+    position: relative;
+    background: var(--print-navy);
+    color: white;
+    padding: 48pt 48pt 40pt;
+    page-break-after: avoid;
+    overflow: hidden;
+  }
+  .print-header::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 200pt;
+    height: 200pt;
+    background: radial-gradient(circle at top right, rgba(251,217,69,.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .print-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4pt;
+    background: linear-gradient(90deg, var(--print-gold) 0%, var(--print-blue) 100%);
+  }
+  .print-shield {
+    width: 48pt;
+    height: 48pt;
+    margin-bottom: 16pt;
+  }
+  .print-event-type {
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--print-gold);
+    margin-bottom: 8pt;
+  }
+  .print-event-name {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: 32pt;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: white;
+    line-height: 1;
+    margin-bottom: 10pt;
+  }
+  .print-event-tagline {
+    font-family: var(--font-serif), Georgia, serif;
+    font-style: italic;
+    font-size: 13pt;
+    color: rgba(255,255,255,.75);
+    margin-bottom: 24pt;
+    max-width: 400pt;
+    line-height: 1.4;
+  }
+  .print-event-meta {
+    display: flex;
+    gap: 24pt;
+    flex-wrap: wrap;
+  }
+  .print-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8pt;
+  }
+  .print-meta-icon {
+    width: 28pt;
+    height: 28pt;
+    border-radius: 50%;
+    background: rgba(255,255,255,.12);
+    display: grid;
+    place-items: center;
+    flex: none;
+  }
+  .print-meta-icon svg { width: 14pt; height: 14pt; }
+  .print-meta-label {
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: rgba(255,255,255,.5);
+    margin-bottom: 2pt;
+  }
+  .print-meta-value {
+    font-size: 11pt;
+    font-weight: 700;
+    color: white;
+  }
+
+  /* ── Print body ── */
+  .event-hero, .event-sidebar, .video-placeholder, .no-print,
+  .event-ctas, .reg-card, .badge-generator, .contact-card,
+  .faid-section, .faq-filters, .faq-list, .parents-section,
+  .faid-strip, .stats-strip, .visit-cta, .hero-graphic,
+  .instance-picker, .event-meta, .print-header-btn { display: none !important; }
+
+  .event-layout { display: block !important; }
+  .event-main { max-width: 100% !important; }
+
+  .event-body-text { font-size: 10pt; line-height: 1.6; }
+
+  .print-section-title {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-size: 16pt;
+    font-weight: 800;
+    color: var(--print-navy);
+    letter-spacing: -.01em;
+    border-bottom: 2pt solid var(--print-gold);
+    padding-bottom: 6pt;
+    margin-bottom: 16pt;
+    page-break-after: avoid;
+  }
+
+  /* ── Schedule table ── */
+  .schedule-timeline { display: none !important; }
+  .print-schedule {
+    display: table !important;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10pt;
+    page-break-inside: avoid;
+  }
+  .print-schedule thead th {
+    background: var(--print-navy);
+    color: white;
+    font-size: 8pt;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 8pt 10pt;
+    text-align: left;
+  }
+  .print-schedule thead th:first-child { width: 80pt; }
+  .print-schedule tbody tr { border-bottom: 1pt solid #e5e5e5; }
+  .print-schedule tbody tr:nth-child(even) { background: #f9f9f9; }
+  .print-schedule td {
+    padding: 9pt 10pt;
+    vertical-align: top;
+  }
+  .print-schedule .print-time {
+    font-weight: 700;
+    color: var(--print-blue);
+    white-space: nowrap;
+  }
+  .print-schedule .print-title {
+    font-weight: 700;
+    color: var(--print-navy);
+    margin-bottom: 2pt;
+  }
+  .print-schedule .print-desc {
+    font-size: 9pt;
+    color: #555;
+    line-height: 1.4;
+  }
+  .print-schedule .print-track {
+    display: inline-block;
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 2pt 6pt;
+    border-radius: 3pt;
+    margin-top: 3pt;
+  }
+  .print-track-students { background: rgba(0,104,187,.1); color: var(--print-blue); }
+  .print-track-parents { background: rgba(251,217,69,.2); color: #7a6000; }
+  .print-track-all { background: rgba(0,23,41,.07); color: var(--print-navy); }
+
+  /* ── Bring items ── */
+  .print-bring {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 8pt;
+    page-break-inside: avoid;
+  }
+  .bring-grid { display: none !important; }
+  .print-bring-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8pt;
+    padding: 8pt 10pt;
+    background: #f9f9f9;
+    border-left: 3pt solid var(--print-gold);
+    border-radius: 0 4pt 4pt 0;
+  }
+  .print-bring-icon { font-size: 14pt; flex: none; }
+  .print-bring-text { font-size: 9pt; color: #333; line-height: 1.4; }
+
+  /* ── Dress code box ── */
+  .dress-code-box {
+    display: none !important;
+  }
+  .print-dress {
+    display: flex !important;
+    align-items: center;
+    gap: 12pt;
+    padding: 12pt 16pt;
+    background: linear-gradient(135deg, rgba(251,217,69,.12) 0%, rgba(251,217,69,.05) 100%);
+    border: 1.5pt solid var(--print-gold);
+    border-radius: 6pt;
+    margin-bottom: 20pt;
+    page-break-inside: avoid;
+  }
+  .print-dress-icon {
+    width: 36pt; height: 36pt;
+    border-radius: 50%;
+    background: var(--print-gold);
+    display: grid; place-items: center;
+    flex: none;
+  }
+  .print-dress-label {
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #7a6000;
+    margin-bottom: 2pt;
+  }
+  .print-dress-value {
+    font-size: 12pt;
+    font-weight: 800;
+    color: var(--print-navy);
+    margin-bottom: 2pt;
+  }
+  .print-dress-tip { font-size: 9pt; color: #555; }
+
+  /* ── QR / Registration box ── */
+  .print-reg-box {
+    display: flex !important;
+    align-items: center;
+    gap: 16pt;
+    padding: 16pt 20pt;
+    background: var(--print-navy);
+    color: white;
+    border-radius: 6pt;
+    margin-bottom: 20pt;
+    page-break-inside: avoid;
+  }
+  .print-reg-label {
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--print-gold);
+    margin-bottom: 4pt;
+  }
+  .print-reg-url {
+    font-size: 10pt;
+    font-weight: 600;
+    color: white;
+    word-break: break-all;
+  }
+  .print-qr-placeholder {
+    width: 64pt;
+    height: 64pt;
+    border-radius: 6pt;
+    background: white;
+    display: grid;
+    place-items: center;
+    flex: none;
+    border: 2pt solid white;
+  }
+  .print-qr-placeholder-inner {
+    width: 56pt;
+    height: 56pt;
+    background: repeating-linear-gradient(
+      0deg,
+      var(--print-navy) 0pt, var(--print-navy) 6pt,
+      white 6pt, white 12pt
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--print-navy) 0pt, var(--print-navy) 6pt,
+      white 6pt, white 12pt
+    );
+    border-radius: 3pt;
+  }
+
+  /* ── Parents info ── */
+  .parents-section { page-break-inside: avoid; }
+
+  /* ── Footer ── */
+  .print-footer {
+    display: block !important;
+    margin-top: 32pt;
+    padding-top: 16pt;
+    border-top: 1pt solid #e5e5e5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 8pt;
+    color: #888;
+  }
+  .print-footer a { color: var(--print-blue); }
+
+  .event-section { page-break-inside: avoid; margin-bottom: 28pt; }
+  .event-section-title { display: none; }
+  h2.print-section-title { display: block !important; }
+
+  /* ── A4/Letter tuning ── */
+  @page { margin: 18mm 15mm; size: auto; }
 }
 </style>

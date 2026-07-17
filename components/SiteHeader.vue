@@ -19,11 +19,11 @@ defineProps<{ event?: EventData | null }>()
         <a href="/#missions">Upcoming events</a>
         <a href="https://www.northwestu.edu/financial-aid" target="_blank" rel="noopener">Financial aid</a>
         <a href="https://www.northwestu.edu/admissions" target="_blank" rel="noopener">Admissions</a>
-        <a href="mailto:visit@northwestu.edu">Contact</a>
+        <a href="mailto:admissions@northwestu.edu">Contact</a>
       </nav>
 
       <div class="header-actions">
-        <a href="mailto:visit@northwestu.edu" class="btn btn-coral btn-sm">
+        <a href="mailto:admissions@northwestu.edu" class="btn btn-coral btn-sm">
           Register
         </a>
       </div>

@@ -5,7 +5,7 @@ const { allEvents } = useEvents()
 
 const COLOR_MAP = {
   coral: { bg: 'rgba(251,217,69,.12)', accent: 'var(--nu-tour)', tag: 'badge-gold' },
-  teal:  { bg: 'rgba(4,80,92,.1)',      accent: 'var(--nu-evergreen)', tag: 'badge-teal' },
+  teal:  { bg: 'rgba(68,186,130,.1)',      accent: 'var(--accent-teal)', tag: 'badge-teal' },
   gold:  { bg: 'rgba(251,217,69,.12)', accent: 'var(--nu-tour)',   tag: 'badge-gold' },
 } as const
 
@@ -38,7 +38,7 @@ const getColors = (color: 'coral' | 'teal' | 'gold') => COLOR_MAP[color]
               </svg>
               See upcoming missions
             </a>
-            <a href="mailto:visit@northwestu.edu" class="btn btn-outline">
+            <a href="mailto:admissions@northwestu.edu" class="btn btn-outline">
               Ask us anything
             </a>
           </div>
@@ -185,12 +185,12 @@ const getColors = (color: 'coral' | 'teal' | 'gold') => COLOR_MAP[color]
             <p class="visit-sub">Private tours run year-round. Talk to an admissions counselor one-on-one. Or just email us — we actually reply.</p>
           </div>
           <div class="visit-actions">
-            <a href="mailto:visit@northwestu.edu" class="btn btn-navy">
+            <a href="mailto:admissions@northwestu.edu" class="btn btn-navy">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              visit@northwestu.edu
+              admissions@northwestu.edu
             </a>
             <a href="tel:+14255551234" class="btn btn-outline">(425) 555-1234</a>
           </div>

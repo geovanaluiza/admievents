@@ -9,7 +9,7 @@ interface ChatMessage {
 
 const KNOWLEDGE = [
   { q: 'parking', a: 'Parking is completely free for all admissions events. Pull into any visitor spot — no permit needed on event days.' },
-  { q: 'cancel', a: 'No problem! Just email visit@northwestu.edu at least 48 hours before your event and we\'ll move you to another date with no penalty. Last-minute stuff happens.' },
+  { q: 'cancel', a: 'No problem! Just email admissions@northwestu.edu at least 48 hours before your event and we\'ll move you to another date with no penalty. Last-minute stuff happens.' },
   { q: 'cost | free | price', a: 'All our admissions events are completely free — including the NU Overnight. There\'s zero cost to attend.' },
   { q: 'what to wear | dress | casual', a: 'PNW casual all the way. Jeans, sneakers, layers — totally fine. Nothing formal needed.' },
   { q: 'parents | mom | dad | guardian', a: 'Parents are absolutely welcome at all events! Discover NU is designed for the whole family. For NU Overnight, your student stays with a vetted student host — you\'re free to head home or explore Kirkland.' },
@@ -17,7 +17,7 @@ const KNOWLEDGE = [
   { q: 'swoop shop', a: 'The Swoop Shop is our campus bookstore. You can order event-specific merch and gear there — hats, shirts, and more with NU branding.' },
   { q: 'food | lunch | eat', a: 'Meals are included at all events. Discover NU includes lunch at Sæter, our campus dining hall. NU Overnight includes dinner and breakfast.' },
   { q: 'safety | safe', a: 'Our campus is private with 24/7 security. For NU Overnight, every student host is background-checked and trained. Residence halls have key-card access only.' },
-  { q: 'scholarship | aid | financial', a: 'Over 90% of NU students receive financial aid. Our financial aid team is at every Discover NU event — and you can always email visit@northwestu.edu to set up a one-on-one conversation.' },
+  { q: 'scholarship | aid | financial', a: 'Over 90% of NU students receive financial aid. Our financial aid team is at every Discover NU event — and you can always email admissions@northwestu.edu to set up a one-on-one conversation.' },
   { q: 'drive | directions | transit', a: 'We\'re 20 minutes from Seattle, easy off I-405. From Seattle: take I-90 East to Exit 12, then follow signs. No car? King County Metro runs nearby. We can help coordinate rideshare.' },
   { q: 'accommodation | hotel | stay', a: 'Kirkland has several hotels nearby. The closest is the Hyatt Regency Kirkland — mention Northwest University and ask for the NU rate.' },
   { q: 'nursing | business | program', a: 'Each program has faculty at Discover NU events. The Academic Fair is your chance to meet professors from Nursing, Business, Music Production, Psychology, and more.' },
@@ -88,7 +88,7 @@ const escalate = () => {
   escalated.value = true
   messages.value.push({
     role: 'bot',
-    text: "Great idea — our admissions counselors are really helpful. Email us at visit@northwestu.edu and we'll get back to you within one business day. You can also call (425) 555-1234.",
+    text: "Great idea — our admissions team is here to help. Email admissions@northwestu.edu and we'll reply within one business day, or browse admissions.northwestu.edu for the full info. You can also call (425) 555-1234.",
     time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }),
   })
 }
@@ -132,7 +132,7 @@ const handleKeydown = (e: KeyboardEvent) => {
               <p class="chat-header-sub">Usually replies in minutes</p>
             </div>
           </div>
-          <a href="mailto:visit@northwestu.edu" class="chat-email" title="Email us">
+          <a href="mailto:admissions@northwestu.edu" class="chat-email" title="Email us">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
               <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -170,7 +170,7 @@ const handleKeydown = (e: KeyboardEvent) => {
 
         <div v-if="escalated" class="escalate-row">
           <p class="escalate-note">
-            Or call us: <a href="tel:+14255551234">(425) 555-1234</a> · <a href="mailto:visit@northwestu.edu">visit@northwestu.edu</a>
+            Or call us: <a href="tel:+14255551234">(425) 555-1234</a> · <a href="mailto:admissions@northwestu.edu">admissions@northwestu.edu</a>
           </p>
         </div>
 
