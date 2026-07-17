@@ -1,0 +1,143 @@
+const client_manifest = {
+  "_DA2B5ZdH.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DA2B5ZdH.js",
+    "name": "v3",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ]
+  },
+  "_DJOtVCqx.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DJOtVCqx.js",
+    "name": "useEvents",
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": [
+      "useEvents.BIKS-gTM.css"
+    ]
+  },
+  "useEvents.BIKS-gTM.css": {
+    "file": "useEvents.BIKS-gTM.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "_useEvents.BIKS-gTM.css": {
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true,
+    "file": "useEvents.BIKS-gTM.css",
+    "src": "_useEvents.BIKS-gTM.css"
+  },
+  "node_modules/nuxt/dist/app/components/error-404.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "tiCNgJKj.js",
+    "name": "error-404",
+    "src": "node_modules/nuxt/dist/app/components/error-404.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_DA2B5ZdH.js"
+    ],
+    "css": []
+  },
+  "error-404.MksMKVWr.css": {
+    "file": "error-404.MksMKVWr.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "node_modules/nuxt/dist/app/components/error-500.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "DSlx97Fe.js",
+    "name": "error-500",
+    "src": "node_modules/nuxt/dist/app/components/error-500.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.js",
+      "_DA2B5ZdH.js"
+    ],
+    "css": []
+  },
+  "error-500.DOWD7OuR.css": {
+    "file": "error-500.DOWD7OuR.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "node_modules/nuxt/dist/app/entry.js": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "B1UQqPuJ.js",
+    "name": "entry",
+    "src": "node_modules/nuxt/dist/app/entry.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "node_modules/nuxt/dist/app/components/error-404.vue",
+      "node_modules/nuxt/dist/app/components/error-500.vue"
+    ],
+    "_globalCSS": true
+  },
+  "pages/events/[slug].vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "Db03My11.js",
+    "name": "_slug_",
+    "src": "pages/events/[slug].vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_DJOtVCqx.js",
+      "node_modules/nuxt/dist/app/entry.js",
+      "_DA2B5ZdH.js"
+    ],
+    "css": []
+  },
+  "_slug_.Dk-alb61.css": {
+    "file": "_slug_.Dk-alb61.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  },
+  "pages/index.vue": {
+    "resourceType": "script",
+    "module": true,
+    "prefetch": true,
+    "preload": true,
+    "file": "9we6jbMn.js",
+    "name": "index",
+    "src": "pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_DJOtVCqx.js",
+      "node_modules/nuxt/dist/app/entry.js"
+    ],
+    "css": []
+  },
+  "index.C2NUEgq7.css": {
+    "file": "index.C2NUEgq7.css",
+    "resourceType": "style",
+    "prefetch": true,
+    "preload": true
+  }
+};
+
+export { client_manifest as default };
+//# sourceMappingURL=client.manifest.mjs.map
