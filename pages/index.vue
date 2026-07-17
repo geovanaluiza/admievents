@@ -275,4 +275,21 @@ useSeoMeta({
 .visit-title { font-family: var(--font-display); font-weight: 800; font-size: var(--text-4xl); color: var(--text-primary); letter-spacing: var(--tracking-tight); margin-bottom: 12px; }
 .visit-sub { font-size: var(--text-lg); color: var(--text-secondary); line-height: var(--leading-relaxed); }
 .visit-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ── Fix contrast — explicit colors, no CSS var dependency ── */
+.section { background: #f7f9fb; }
+
+.eyebrow { color: #034C87 !important; }
+.eyebrow-gold { color: #85754e !important; }
+.eyebrow-teal { color: #44ba82 !important; }
+
+.section-title { color: #1a2e42 !important; }
+.section-sub { color: #3d5a73 !important; }
+
+.mission-name { color: #1a2e42 !important; }
+.mission-tagline { color: #3d5a73 !important; }
+.mission-desc { color: #3d5a73 !important; }
+
+.badge-gold { background: rgba(251,217,69,.15) !important; color: #85754e !important; }
+.badge-teal { background: rgba(68,186,130,.12) !important; color: #44ba82 !important; }
 </style>
