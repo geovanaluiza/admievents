@@ -283,15 +283,20 @@ useSeoMeta({
 .eyebrow-gold { color: #85754e !important; }
 .eyebrow-teal { color: #44ba82 !important; }
 
-.section-title { color: #1a2e42 !important; }
-.section-sub { color: #3d5a73 !important; }
-
+.section-title { color: #1a2e42 !important; font-size: 2.5rem !important; }
+.section-sub { color: #4a5568 !important; }
 .mission-name { color: #1a2e42 !important; }
-.mission-tagline { color: #3d5a73 !important; }
-.mission-desc { color: #3d5a73 !important; }
+.mission-tagline { color: #4a5568 !important; }
+.mission-desc { color: #4a5568 !important; }
 .visit-title { color: #1a2e42 !important; }
-.visit-sub { color: #3d5a73 !important; }
+.visit-sub { color: #4a5568 !important; }
+.badge-gold { background: rgba(251,217,69,.2) !important; color: #85754e !important; }
+.badge-teal { background: rgba(68,186,130,.15) !important; color: #2e8b57 !important; }
 
-.badge-gold { background: rgba(251,217,69,.15) !important; color: #85754e !important; }
-.badge-teal { background: rgba(68,186,130,.12) !important; color: #44ba82 !important; }
+/* ── Hardcoded backgrounds ── */
+.section { background: #ede9e0 !important; }
+.visit-cta { background: #e8e2d8 !important; }
+.visit-card { background: rgba(255,255,255,.7) !important; backdrop-filter: blur(12px) !important; }
+.stats-strip { background: #001729 !important; }
+.hero { background: #001729 !important; }
 </style>
