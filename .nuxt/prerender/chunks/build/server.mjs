@@ -400,7 +400,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-CC0YgBpk.mjs')
+    component: () => import('./index-DFJ7t1nk.mjs')
   },
   {
     name: "events-slug",

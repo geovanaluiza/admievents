@@ -98,7 +98,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: #fff;
   box-shadow: var(--shadow-glow-teal);
 }
-.btn-teal:hover { background: #38a06e; }
+.btn-teal:hover { background: #004d8a; }
 
 /* Outline — ghost style */
 .btn-outline {
@@ -180,7 +180,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .badge-gold  { background: var(--accent-gold-light); color: var(--nu-gold); }
 .badge-navy  { background: rgba(3,76,135,.1); color: var(--nu-navy); }
-.badge-teal  { background: rgba(68,186,130,.1); color: var(--accent-teal); }
+.badge-teal  { background: rgba(0,104,187,.1); color: var(--accent-teal); }
 .badge-dark  { background: rgba(255,255,255,.12); color: var(--text-on-dark); }
 
 /* ---- Section headers ---- */
@@ -348,7 +348,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .form-success {
   display: flex; align-items: center; gap: 12px;
   padding: 16px 20px;
-  background: rgba(68,186,130,.1);
+  background: rgba(0,104,187,.1);
   border: 1px solid rgba(68,186,130,.25);
   border-radius: var(--radius-md);
   color: var(--accent-teal);

@@ -75,7 +75,7 @@ useSeoMeta({
             </div>
           </article>
 
-          <article class="mission-card card reveal" style="--card-accent: var(--accent-teal); --card-bg: rgba(68,186,130,.1);">
+          <article class="mission-card card reveal" style="--card-accent: var(--accent-teal); --card-bg: rgba(0,104,187,.1);">
             <div class="mission-header">
               <span class="mission-emoji">🌙</span>
               <span class="badge badge-teal">Overnight</span>
@@ -115,7 +115,7 @@ useSeoMeta({
             </div>
           </article>
 
-          <article class="mission-card card reveal" style="--card-accent: var(--accent-teal); --card-bg: rgba(68,186,130,.1);">
+          <article class="mission-card card reveal" style="--card-accent: var(--accent-teal); --card-bg: rgba(0,104,187,.1);">
             <div class="mission-header">
               <span class="mission-emoji">🎤</span>
               <span class="badge badge-teal">Student Life</span>
@@ -291,7 +291,7 @@ useSeoMeta({
 .visit-title { color: #1a2e42 !important; }
 .visit-sub { color: #4a5568 !important; }
 .badge-gold { background: rgba(251,217,69,.2) !important; color: #85754e !important; }
-.badge-teal { background: rgba(68,186,130,.15) !important; color: #2e8b57 !important; }
+.badge-teal { background: rgba(0,104,187,.15) !important; color: #0068bb !important; }
 
 /* ── Hardcoded backgrounds ── */
 .section { background: #ede9e0 !important; }
