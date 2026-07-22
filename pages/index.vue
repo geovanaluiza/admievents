@@ -294,9 +294,9 @@ useSeoMeta({
 .badge-teal { background: rgba(0,104,187,.15) !important; color: #0068bb !important; }
 
 /* ── Hardcoded backgrounds ── */
-.section { background: #eaf4fb !important; }
+.section { background: #ffffff !important; }
 .visit-cta { background: #eaf4fb !important; }
-.visit-card { background: rgba(255,255,255,.7) !important; backdrop-filter: blur(12px) !important; }
-.stats-strip { background: #eaf4fb !important; }
+.visit-card { background: #ffffff !important; backdrop-filter: blur(12px) !important; }
+.stats-strip { background: #0068bb !important; color: #fff !important; }
 .hero { background: #0068bb !important; color: #fff !important; }
 </style>
