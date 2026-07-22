@@ -224,8 +224,8 @@ useSeoMeta({
 }
 .hero-graphic { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
 .graphic-card {
-  background: rgba(0,104,187,.2);
-  border: 1px solid rgba(0,104,187,.25);
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
   border-radius: var(--radius-lg);
   padding: 20px 16px;
   text-align: center;
@@ -280,7 +280,7 @@ useSeoMeta({
 .section { background: #f7f9fb; }
 
 .eyebrow { color: #0068bb !important; }
-.eyebrow-gold { color: #85754e !important; }
+.eyebrow-gold { color: #fbd945 !important; }
 .eyebrow-teal { color: #44ba82 !important; }
 
 .section-title { color: #1a2e42 !important; font-size: 2.5rem !important; }
@@ -298,5 +298,5 @@ useSeoMeta({
 .visit-cta { background: #eaf4fb !important; }
 .visit-card { background: rgba(255,255,255,.7) !important; backdrop-filter: blur(12px) !important; }
 .stats-strip { background: #eaf4fb !important; }
-.hero { background: #eaf4fb !important; }
+.hero { background: #0068bb !important; color: #fff !important; }
 </style>
