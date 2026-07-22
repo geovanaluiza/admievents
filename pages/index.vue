@@ -47,7 +47,7 @@ useSeoMeta({
 
       <div class="hero-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0 80L60 68C120 56 240 32 360 24C480 16 600 24 720 32C840 40 960 48 1080 48C1200 48 1320 40 1380 36L1440 32V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z" fill="#FFFBF5"/>
+          <path d="M0 80L60 68C120 56 240 32 360 24C480 16 600 24 720 32C840 40 960 48 1080 48C1200 48 1320 40 1380 36L1440 32V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z" fill="#ffffff"/>
         </svg>
       </div>
     </section>
@@ -247,6 +247,7 @@ useSeoMeta({
 .mission-card {
   padding: clamp(24px, 4vw, 36px);
   border-top: 4px solid var(--card-accent);
+  background: var(--card-bg, var(--bg-card));
   display: flex;
   flex-direction: column;
   gap: 12px;
