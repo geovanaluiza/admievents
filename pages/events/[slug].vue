@@ -383,7 +383,7 @@ const printPage = () => window.print()
       <!-- Branded print header -->
       <header class="print-header">
         <svg class="print-shield" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M32 4L8 14v18c0 14 24 22 24 22s24-8 24-22V14L32 4z" fill="#001729" stroke="#fbd945" stroke-width="2"/>
+          <path d="M32 4L8 14v18c0 14 24 22 24 22s24-8 24-22V14L32 4z" fill="#0068bb" stroke="#fbd945" stroke-width="2"/>
           <text x="32" y="38" text-anchor="middle" font-size="14" font-weight="900" fill="#fbd945" font-family="system-ui">NU</text>
         </svg>
         <p class="print-event-type">Northwest University · Admissions Event</p>
@@ -476,7 +476,7 @@ const printPage = () => window.print()
           <div class="print-dress">
             <div class="print-dress-icon" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z" stroke="#001729" stroke-width="1.5"/>
+                <path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.47a1 1 0 00.99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 00.99-.84l.58-3.47a2 2 0 00-1.34-2.23z" stroke="#0068bb" stroke-width="1.5"/>
               </svg>
             </div>
             <div>
@@ -895,7 +895,7 @@ const printPage = () => window.print()
 /* ── Print overrides ────────────────────────────────────── */
 @media print {
   :root {
-    --print-navy: #001729;
+    --print-navy: #0068bb;
     --print-gold: #fbd945;
     --print-blue: #0068bb;
   }
@@ -1070,7 +1070,7 @@ const printPage = () => window.print()
   }
   .print-track-students { background: rgba(0,104,187,.1); color: var(--print-blue); }
   .print-track-parents { background: rgba(251,217,69,.2); color: #7a6000; }
-  .print-track-all { background: rgba(0,23,41,.07); color: var(--print-navy); }
+  .print-track-all { background: rgba(0,104,187,.07); color: var(--print-navy); }
 
   /* ── Bring items ── */
   .print-bring {

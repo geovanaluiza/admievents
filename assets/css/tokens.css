@@ -7,7 +7,7 @@
   /* ---- Official NU Brand Colors ---- */
   --nu-blue:      #0068bb;
   --nu-navy:      #0068bb;
-  --nu-midnight:  #001729;
+  --nu-midnight:  #0068bb;
   --nu-evergreen: #04505c;
   --nu-leaf:      #44ba82;
   --nu-gold:      #85754e;
@@ -20,7 +20,7 @@
   --bg-base:      #f7f9fb;
   --bg-card:      #ffffff;
   --bg-tint:      #eef4fb;
-  --bg-dark:      #001729;
+  --bg-dark:      #0068bb;
   --bg-dark-card: rgba(0, 23, 41, 0.88);
   --bg-glass:     rgba(0, 38, 61, 0.55);
 
@@ -28,7 +28,7 @@
   --text-secondary: #3d5a73;
   --text-muted:    #7a95aa;
   --text-on-dark:  #f0f4f8;
-  --text-on-gold:  #001729;
+  --text-on-gold:  #0068bb;
 
   --accent-coral:     var(--nu-tour);
   --accent-coral-light: rgba(251, 217, 69, 0.15);
