@@ -224,7 +224,7 @@ useSeoMeta({
 }
 .hero-graphic { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
 .graphic-card {
-  background: rgba(3,76,135,.2);
+  background: rgba(0,104,187,.2);
   border: 1px solid rgba(0,104,187,.25);
   border-radius: var(--radius-lg);
   padding: 20px 16px;
@@ -279,7 +279,7 @@ useSeoMeta({
 /* ── Fix contrast — explicit colors, no CSS var dependency ── */
 .section { background: #f7f9fb; }
 
-.eyebrow { color: #034C87 !important; }
+.eyebrow { color: #0068bb !important; }
 .eyebrow-gold { color: #85754e !important; }
 .eyebrow-teal { color: #44ba82 !important; }
 
@@ -294,9 +294,9 @@ useSeoMeta({
 .badge-teal { background: rgba(0,104,187,.15) !important; color: #0068bb !important; }
 
 /* ── Hardcoded backgrounds ── */
-.section { background: #ede9e0 !important; }
-.visit-cta { background: #e8e2d8 !important; }
+.section { background: #eaf4fb !important; }
+.visit-cta { background: #eaf4fb !important; }
 .visit-card { background: rgba(255,255,255,.7) !important; backdrop-filter: blur(12px) !important; }
-.stats-strip { background: #001729 !important; }
-.hero { background: #001729 !important; }
+.stats-strip { background: #eaf4fb !important; }
+.hero { background: #eaf4fb !important; }
 </style>

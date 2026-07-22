@@ -107,10 +107,10 @@ const printPage = () => window.print()
               </svg>
               Register for {{ selectedInst.label }}
             </a>
-            <a :href="event.swoopShopUrl" target="_blank" rel="noopener" class="btn btn-outline btn-lg" style="border-color: rgba(255,255,255,.4); color: #fff;">
+            <a :href="event.swoopShopUrl" target="_blank" rel="noopener" class="btn btn-outline btn-lg" style="border-color: rgba(0,104,187,.4); color: #0068bb;">
               🛍️ Swoop Shop
             </a>
-            <button class="btn btn-outline btn-lg no-print" style="border-color: rgba(255,255,255,.4); color: #fff;" @click="printPage">
+            <button class="btn btn-outline btn-lg no-print" style="border-color: rgba(0,104,187,.4); color: #0068bb;" @click="printPage">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <polyline points="6 9 6 2 18 2 18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -504,8 +504,8 @@ const printPage = () => window.print()
 /* ── Event hero ────────────────────────────────────────── */
 .event-hero {
   position: relative;
-  background: var(--bg-dark);
-  color: var(--text-on-dark);
+  background: #eaf4fb;
+  color: var(--text-primary);
   padding: clamp(80px, 10vw, 120px) 0 clamp(60px, 8vw, 96px);
   overflow: hidden;
 }
@@ -519,7 +519,7 @@ const printPage = () => window.print()
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0,23,41,.95) 0%, rgba(0,23,41,.7) 50%, rgba(0,23,41,.85) 100%);
+  background: linear-gradient(135deg, rgba(0,104,187,.15) 0%, rgba(0,104,187,.10) 50%, rgba(0,104,187,.15) 100%);
 }
 .event-hero-inner {
   position: relative;
@@ -540,7 +540,7 @@ const printPage = () => window.print()
   font-weight: 800;
   font-size: clamp(2rem, 5vw, 3.5rem);
   letter-spacing: var(--tracking-tight);
-  color: #fff;
+  color: var(--text-primary);
   line-height: 1.05;
   margin-bottom: 12px;
 }
@@ -575,8 +575,8 @@ const printPage = () => window.print()
 .instance-chip.is-active,
 .instance-chip:hover {
   border-color: var(--event-accent);
-  background: rgba(255,255,255,.12);
-  color: #fff;
+  background: rgba(0,104,187,.12);
+  color: #0068bb;
 }
 .chip-weekday { font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
 .chip-date { font-size: var(--text-base); font-weight: 700; }
@@ -608,9 +608,9 @@ const printPage = () => window.print()
 .play-ring {
   width: 64px; height: 64px;
   border-radius: 50%;
-  background: rgba(255,255,255,.15);
-  border: 2px solid rgba(255,255,255,.5);
-  color: #fff;
+  background: rgba(0,104,187,.15);
+  border: 2px solid rgba(0,104,187,.5);
+  color: #0068bb;
   display: grid; place-items: center;
   cursor: pointer;
   backdrop-filter: blur(8px);

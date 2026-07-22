@@ -41,8 +41,8 @@
   --accent-blue:   var(--nu-blue);
   --accent-blue-light: rgba(0, 104, 187, 0.1);
 
-  --border-subtle: rgba(3, 76, 135, 0.08);
-  --border-mid:    rgba(3, 76, 135, 0.16);
+  --border-subtle: rgba(0, 104, 187, 0.08);
+  --border-mid:    rgba(0, 104, 187, 0.16);
   --border-on-dark: rgba(255, 255, 255, 0.12);
 
   /* ---- Type families ---- */
@@ -90,10 +90,10 @@
   --radius-circle: 50%;
 
   /* ---- Shadows ---- */
-  --shadow-sm:  0 1px 3px rgba(3, 76, 135, 0.07), 0 1px 2px rgba(3, 76, 135, 0.05);
-  --shadow-md:  0 4px 12px rgba(3, 76, 135, 0.09), 0 2px 4px rgba(3, 76, 135, 0.06);
-  --shadow-lg:  0 12px 32px rgba(3, 76, 135, 0.11), 0 4px 8px rgba(3, 76, 135, 0.07);
-  --shadow-xl:  0 24px 48px rgba(3, 76, 135, 0.16);
+  --shadow-sm:  0 1px 3px rgba(0, 104, 187, 0.07), 0 1px 2px rgba(0, 104, 187, 0.05);
+  --shadow-md:  0 4px 12px rgba(0, 104, 187, 0.09), 0 2px 4px rgba(0, 104, 187, 0.06);
+  --shadow-lg:  0 12px 32px rgba(0, 104, 187, 0.11), 0 4px 8px rgba(0, 104, 187, 0.07);
+  --shadow-xl:  0 24px 48px rgba(0, 104, 187, 0.16);
   --shadow-glow-gold: 0 8px 32px rgba(251, 217, 69, 0.35);
   --shadow-glow-teal: 0 8px 32px rgba(0, 104, 187, 0.30);
   --shadow-glow-blue: 0 8px 32px rgba(0, 104, 187, 0.30);

@@ -179,7 +179,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   letter-spacing: 0.02em;
 }
 .badge-gold  { background: var(--accent-gold-light); color: var(--nu-gold); }
-.badge-navy  { background: rgba(3,76,135,.1); color: var(--nu-navy); }
+.badge-navy  { background: rgba(0,104,187,.1); color: var(--nu-navy); }
 .badge-teal  { background: rgba(0,104,187,.1); color: var(--accent-teal); }
 .badge-dark  { background: rgba(255,255,255,.12); color: var(--text-on-dark); }
 
@@ -334,7 +334,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .field input::placeholder { color: var(--text-muted); }
 .field input:focus, .field select:focus, .field textarea:focus {
   border-color: var(--nu-navy);
-  box-shadow: 0 0 0 4px rgba(3,76,135,.12);
+  box-shadow: 0 0 0 4px rgba(0,104,187,.12);
 }
 .field.has-error input,
 .field.has-error select { border-color: #c0364d; }
