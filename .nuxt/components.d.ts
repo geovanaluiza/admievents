@@ -12,7 +12,8 @@ type HydrationStrategies = {
 }
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 interface _GlobalComponents {
-      'FaqChatbot': typeof import("../components/FaqChatbot.vue")['default']
+      'EventIcon': typeof import("../components/EventIcon.vue")['default']
+    'FaqChatbot': typeof import("../components/FaqChatbot.vue")['default']
     'SiteFooter': typeof import("../components/SiteFooter.vue")['default']
     'SiteHeader': typeof import("../components/SiteHeader.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -39,7 +40,8 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']
-      'LazyFaqChatbot': LazyComponent<typeof import("../components/FaqChatbot.vue")['default']>
+      'LazyEventIcon': LazyComponent<typeof import("../components/EventIcon.vue")['default']>
+    'LazyFaqChatbot': LazyComponent<typeof import("../components/FaqChatbot.vue")['default']>
     'LazySiteFooter': LazyComponent<typeof import("../components/SiteFooter.vue")['default']>
     'LazySiteHeader': LazyComponent<typeof import("../components/SiteHeader.vue")['default']>
     'LazyNuxtWelcome': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
@@ -72,6 +74,7 @@ declare module 'vue' {
   export interface GlobalComponents extends _GlobalComponents { }
 }
 
+export const EventIcon: typeof import("../components/EventIcon.vue")['default']
 export const FaqChatbot: typeof import("../components/FaqChatbot.vue")['default']
 export const SiteFooter: typeof import("../components/SiteFooter.vue")['default']
 export const SiteHeader: typeof import("../components/SiteHeader.vue")['default']
@@ -99,6 +102,7 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']
+export const LazyEventIcon: LazyComponent<typeof import("../components/EventIcon.vue")['default']>
 export const LazyFaqChatbot: LazyComponent<typeof import("../components/FaqChatbot.vue")['default']>
 export const LazySiteFooter: LazyComponent<typeof import("../components/SiteFooter.vue")['default']>
 export const LazySiteHeader: LazyComponent<typeof import("../components/SiteHeader.vue")['default']>

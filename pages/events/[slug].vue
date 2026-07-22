@@ -329,7 +329,7 @@ const printPage = () => window.print()
               Register now — it's free
             </a>
             <a :href="event.swoopShopUrl" target="_blank" rel="noopener" class="btn btn-outline btn-full btn-sm">
-              🛍️ Swoop Shop
+              <EventIcon name="shopping-bag" :size="16" /> Swoop Shop
             </a>
             <p class="reg-note">No commitment required to register.</p>
           </div>
@@ -464,7 +464,7 @@ const printPage = () => window.print()
           <h2 class="print-section-title">What to bring</h2>
           <div class="print-bring">
             <div v-for="item in event.bringItems" :key="item.text" class="print-bring-item">
-              <span class="print-bring-icon" aria-hidden="true">{{ item.icon }}</span>
+              <span class="print-bring-icon" aria-hidden="true"><EventIcon :name="item.icon" :size="12" /></span>
               <span class="print-bring-text">{{ item.text }}</span>
             </div>
           </div>
@@ -687,7 +687,7 @@ const printPage = () => window.print()
 }
 .tl-content { padding-bottom: 24px; }
 .tl-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
-.tl-icon { font-size: 1.1rem; }
+.tl-icon { color: var(--event-accent); display: grid; place-items: center; flex: none; }
 .tl-title {
   font-family: var(--font-display);
   font-weight: 700;
@@ -719,7 +719,7 @@ const printPage = () => window.print()
   border: 1px solid var(--border-subtle);
   box-shadow: var(--shadow-sm);
 }
-.bring-icon { font-size: 1.3rem; flex: none; }
+.bring-icon { color: var(--nu-blue); display: grid; place-items: center; flex: none; }
 .bring-text { font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-snug); }
 
 .dress-code-box {
@@ -746,7 +746,7 @@ const printPage = () => window.print()
   gap: 16px;
   margin-bottom: 28px;
 }
-.parents-emoji { font-size: 2.4rem; flex: none; margin-top: 4px; }
+.parents-emoji { color: var(--nu-blue); display: grid; place-items: center; flex: none; margin-top: 4px; }
 .parents-section .event-section-title { margin-bottom: 8px; }
 .parents-grid {
   display: grid;
@@ -755,7 +755,7 @@ const printPage = () => window.print()
 }
 @media (min-width: 640px) { .parents-grid { grid-template-columns: 1fr 1fr; } }
 .parent-card { padding: 20px; }
-.parent-icon { font-size: 1.5rem; display: block; margin-bottom: 10px; }
+.parent-icon { color: var(--nu-blue); display: block; margin-bottom: 10px; }
 .parent-title { font-family: var(--font-display); font-weight: 700; font-size: var(--text-lg); color: var(--text-primary); margin-bottom: 8px; }
 .parent-body { font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-relaxed); }
 

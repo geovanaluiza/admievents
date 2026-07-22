@@ -41,7 +41,7 @@ const messages = ref<ChatMessage[]>([
     role: 'bot',
     text: props.eventName
       ? `Hi! I'm your NU Admissions helper. Ask me anything about ${props.eventName} or admissions in general.`
-      : "Hi! I'm your NU Admissions helper. Ask me anything about our events, admissions, or what it's like to be an Eagle 🦅",
+      : "Hi! I'm your NU Admissions helper. Ask me anything about our events, admissions, or what it's like to be an Eagle",
     time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }),
   },
 ])
@@ -88,7 +88,7 @@ const escalate = () => {
   escalated.value = true
   messages.value.push({
     role: 'bot',
-    text: "Great idea — our admissions team is here to help. Email admissions@northwestu.edu and we'll reply within one business day, or browse admissions.northwestu.edu for the full info. You can also call (425) 555-1234.",
+    text: "Great idea — our admissions team is here to help. Email visit@northwest.edu and we'll reply within one business day. You can also call (425) 555-1234.",
     time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }),
   })
 }
@@ -126,13 +126,13 @@ const handleKeydown = (e: KeyboardEvent) => {
       <div v-if="isOpen" class="chat-panel" role="dialog" aria-label="Admissions help chatbot">
         <div class="chat-header">
           <div class="chat-header-info">
-            <span class="chat-avatar" aria-hidden="true">🦅</span>
+            <span class="chat-avatar" aria-hidden="true"><EventIcon name="bird" :size="22" /></span>
             <div>
               <p class="chat-header-name">NU Admissions Helper</p>
               <p class="chat-header-sub">Usually replies in minutes</p>
             </div>
           </div>
-          <a href="mailto:admissions@northwestu.edu" class="chat-email" title="Email us">
+          <a href="mailto:visit@northwest.edu" class="chat-email" title="Email us">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
               <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -147,7 +147,7 @@ const handleKeydown = (e: KeyboardEvent) => {
             class="chat-msg"
             :class="`msg-${msg.role}`"
           >
-            <span v-if="msg.role === 'bot'" class="msg-avatar" aria-hidden="true">🦅</span>
+            <span v-if="msg.role === 'bot'" class="msg-avatar" aria-hidden="true"><EventIcon name="bird" :size="16" /></span>
             <div class="msg-bubble">
               <p>{{ msg.text }}</p>
               <span class="msg-time">{{ msg.time }}</span>
@@ -155,7 +155,7 @@ const handleKeydown = (e: KeyboardEvent) => {
           </div>
 
           <div v-if="isLoading" class="chat-msg msg-bot">
-            <span class="msg-avatar" aria-hidden="true">🦅</span>
+            <span class="msg-avatar" aria-hidden="true"><EventIcon name="bird" :size="16" /></span>
             <div class="msg-bubble typing">
               <span></span><span></span><span></span>
             </div>
@@ -164,13 +164,13 @@ const handleKeydown = (e: KeyboardEvent) => {
 
         <div v-if="showEscalate" class="escalate-row">
           <button class="btn btn-coral btn-sm btn-full" @click="escalate">
-            ✉️ Email admissions team
+            Email admissions team
           </button>
         </div>
 
         <div v-if="escalated" class="escalate-row">
           <p class="escalate-note">
-            Or call us: <a href="tel:+14255551234">(425) 555-1234</a> · <a href="mailto:admissions@northwestu.edu">admissions@northwestu.edu</a>
+            Or call us: <a href="tel:+14255551234">(425) 555-1234</a> · <a href="mailto:visit@northwest.edu">visit@northwest.edu</a>
           </p>
         </div>
 
@@ -249,7 +249,7 @@ const handleKeydown = (e: KeyboardEvent) => {
   color: var(--text-on-dark);
 }
 .chat-header-info { display: flex; align-items: center; gap: 10px; }
-.chat-avatar { font-size: 1.4rem; }
+.chat-avatar { display: grid; place-items: center; color: var(--nu-tour); }
 .chat-header-name { font-family: var(--font-display); font-weight: 700; font-size: var(--text-sm); }
 .chat-header-sub { font-size: var(--text-xs); color: rgba(240,244,248,.55); }
 .chat-email {
@@ -275,7 +275,7 @@ const handleKeydown = (e: KeyboardEvent) => {
 }
 .chat-msg { display: flex; align-items: flex-end; gap: 8px; }
 .msg-user { flex-direction: row-reverse; }
-.msg-avatar { font-size: 1.1rem; flex: none; margin-bottom: 2px; }
+.msg-avatar { display: grid; place-items: center; color: var(--nu-blue); flex: none; margin-bottom: 2px; }
 .msg-bubble {
   max-width: 80%;
   padding: 10px 14px;
