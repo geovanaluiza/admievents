@@ -30,7 +30,7 @@ export interface EventData {
   slug: string
   name: string
   tagline: string
-  emoji: string
+  icon: string
   color: 'navy' | 'gold' | 'teal'
   description: string
   shortDescription: string
@@ -65,7 +65,7 @@ const EVENTS: EventData[] = [
     slug: 'discover-nu',
     name: 'Discover NU',
     tagline: 'Your first look at what could be home.',
-    emoji: '🏔️',
+    icon: 'mountain',
     color: 'navy',
     shortDescription: 'A guided tour + admissions chat — perfect for first-timers figuring out if NU clicks.',
     description: 'Discover NU is our signature open house event. Spend the day on campus, meet professors and current students, and get all your questions answered by our admissions team. Bring the whole crew — parents, guardians, and anyone who wants to know what makes this place special.',
@@ -83,21 +83,21 @@ const EVENTS: EventData[] = [
     ],
 
     schedule: [
-      { time: '8:15 AM',  title: 'Check In', description: 'Grab your nametag, say hi to the team, and get settled.', icon: '🏷️', location: 'Larson Hall Lobby' },
-      { time: '8:30 AM',  title: 'Welcome', description: 'Get oriented — who we are, what the day looks like, and how to make the most of it.', icon: '👋', location: 'Larson Hall' },
-      { time: '9:00 AM',  title: 'Discover Campus', description: 'Student-led walk through 56 acres — trails, chapel, labs, dining, the whole vibe.', icon: '🚶', location: 'Departs from Larson Hall' },
-      { time: '10:10 AM', title: 'Discover Chapel', description: 'See inside our chapel and hear how faith shapes daily life on campus.', icon: '⛪', location: 'Chapel' },
-      { time: '11:20 AM', title: 'Discover Community', description: 'Meet current students and hear what life is actually like at NU.', icon: '💬', location: 'University Center' },
-      { time: '12:00 PM', title: 'Send-Off', description: 'Quick wrap-up and directions to lunch.', icon: '👋', location: 'Larson Hall' },
-      { time: '12:30 PM', title: 'Choose Your Adventure — Lunch', description: 'Eat at Sæter, our campus dining hall. Come hungry.', icon: '🍽️', location: 'Sæter Dining Hall', track: 'all' },
+      { time: '8:15 AM',  title: 'Check In', description: 'Grab your nametag, say hi to the team, and get settled.', icon: 'tag', location: 'Larson Hall Lobby' },
+      { time: '8:30 AM',  title: 'Welcome', description: 'Get oriented — who we are, what the day looks like, and how to make the most of it.', icon: 'hand', location: 'Larson Hall' },
+      { time: '9:00 AM',  title: 'Discover Campus', description: 'Student-led walk through 56 acres — trails, chapel, labs, dining, the whole vibe.', icon: 'footprints', location: 'Departs from Larson Hall' },
+      { time: '10:10 AM', title: 'Discover Chapel', description: 'See inside our chapel and hear how faith shapes daily life on campus.', icon: 'church', location: 'Chapel' },
+      { time: '11:20 AM', title: 'Discover Community', description: 'Meet current students and hear what life is actually like at NU.', icon: 'message', location: 'University Center' },
+      { time: '12:00 PM', title: 'Send-Off', description: 'Quick wrap-up and directions to lunch.', icon: 'hand', location: 'Larson Hall' },
+      { time: '12:30 PM', title: 'Choose Your Adventure — Lunch', description: 'Eat at Sæter, our campus dining hall. Come hungry.', icon: 'utensils', location: 'Sæter Dining Hall', track: 'all' },
       // Optional afternoon sessions
-      { time: '12:30–1:20 PM', title: 'Class Visit', description: 'Sit in on a real NU class.', icon: '📖', location: 'Academic Buildings', track: 'students' },
-      { time: '1:30–2:20 PM', title: 'Class Visit', description: 'Another class you can drop into.', icon: '📖', location: 'Academic Buildings', track: 'students' },
-      { time: '2:30–3:20 PM', title: 'Class Visit', description: 'A third class option.', icon: '📖', location: 'Academic Buildings', track: 'students' },
-      { time: '1:00–4:00 PM', title: 'Music Auditions', description: 'For prospective Music Production students.', icon: '🎵', location: 'Creatio Studio', track: 'students' },
-      { time: '2:30 PM',       title: 'Residence Hall Tour', description: 'See what dorm life looks like.', icon: '🏠', location: 'Departs from Larson Hall', track: 'all' },
-      { time: '3:30 PM',      title: 'Choralons', description: ' NU\'s auditioned choir — come hear them live.', icon: '🎤', location: 'Chapel', track: 'all' },
-      { time: '12:30–4:00 PM', title: 'One-on-One Meetings', description: 'Meet individually with Admissions or Financial Aid staff.', icon: '💼', location: 'Larson Hall', track: 'all' },
+      { time: '12:30–1:20 PM', title: 'Class Visit', description: 'Sit in on a real NU class.', icon: 'book-open', location: 'Academic Buildings', track: 'students' },
+      { time: '1:30–2:20 PM', title: 'Class Visit', description: 'Another class you can drop into.', icon: 'book-open', location: 'Academic Buildings', track: 'students' },
+      { time: '2:30–3:20 PM', title: 'Class Visit', description: 'A third class option.', icon: 'book-open', location: 'Academic Buildings', track: 'students' },
+      { time: '1:00–4:00 PM', title: 'Music Auditions', description: 'For prospective Music Production students.', icon: 'music', location: 'Creatio Studio', track: 'students' },
+      { time: '2:30 PM',       title: 'Residence Hall Tour', description: 'See what dorm life looks like.', icon: 'home', location: 'Departs from Larson Hall', track: 'all' },
+      { time: '3:30 PM',      title: 'Choralons', description: ' NU\'s auditioned choir — come hear them live.', icon: 'mic', location: 'Chapel', track: 'all' },
+      { time: '12:30–4:00 PM', title: 'One-on-One Meetings', description: 'Meet individually with Admissions or Financial Aid staff.', icon: 'briefcase', location: 'Larson Hall', track: 'all' },
     ],
 
     faqs: [
@@ -115,11 +115,11 @@ const EVENTS: EventData[] = [
     ],
 
     bringItems: [
-      { icon: '👟', text: 'Comfy shoes for the campus tour (partly outdoor, about 45 minutes)' },
-      { icon: '🌧️', text: 'Layers and a light jacket — Kirkland weather is unpredictable' },
-      { icon: '📝', text: 'Questions! Bring a list or just wing it' },
-      { icon: '📱', text: 'Your phone for photos and the campus app' },
-      { icon: '💊', text: 'Any personal meds / allergy epi-pens (we don\'t have these on hand)' },
+      { icon: 'footprints', text: 'Comfy shoes for the campus tour (partly outdoor, about 45 minutes)' },
+      { icon: 'cloud-rain', text: 'Layers and a light jacket — Kirkland weather is unpredictable' },
+      { icon: 'pen-line', text: 'Questions! Bring a list or just wing it' },
+      { icon: 'smartphone', text: 'Your phone for photos and the campus app' },
+      { icon: 'pill', text: 'Any personal meds / allergy epi-pens (we don\'t have these on hand)' },
     ],
 
     dressCode: 'PNW Casual',
@@ -128,10 +128,10 @@ const EVENTS: EventData[] = [
     parentsTitle: 'A note for parents & guardians',
     parentsIntro: 'We know you\'re asking different questions than your student. Here\'s what matters to you — and how we\'ve got you covered.',
     parentsItems: [
-      { icon: '🔒', title: 'Safety & wellbeing', body: 'Our campus is private, gated, and has 24/7 security. Students consistently tell us NU feels safe and like a real community.' },
-      { icon: '💰', title: 'Financial clarity', body: 'We\'ll walk through real scholarship scenarios, out-of-pocket costs, and what financial aid actually looks like. No surprises.' },
-      { icon: '👩‍🏫', title: 'Faculty accessibility', body: 'Class sizes average 18 students. Your student\'s professor will know their name by week two.' },
-      { icon: '🚗', title: 'Getting here', body: 'We\'re 20 minutes from Seattle, with easy parking on campus. SEA-TAC is about 35 minutes away.' },
+      { icon: 'lock', title: 'Safety & wellbeing', body: 'Our campus is private, gated, and has 24/7 security. Students consistently tell us NU feels safe and like a real community.' },
+      { icon: 'dollar-sign', title: 'Financial clarity', body: 'We\'ll walk through real scholarship scenarios, out-of-pocket costs, and what financial aid actually looks like. No surprises.' },
+      { icon: 'presentation', title: 'Faculty accessibility', body: 'Class sizes average 18 students. Your student\'s professor will know their name by week two.' },
+      { icon: 'car', title: 'Getting here', body: 'We\'re 20 minutes from Seattle, with easy parking on campus. SEA-TAC is about 35 minutes away.' },
     ],
 
     financialAid: {

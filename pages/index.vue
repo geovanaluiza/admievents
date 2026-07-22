@@ -28,17 +28,17 @@ useSeoMeta({
 
         <div class="hero-graphic" aria-hidden="true">
           <div class="graphic-card">
-            <span class="graphic-emoji">🏔️</span>
+            <span class="graphic-icon"><EventIcon name="mountain" :size="28" /></span>
             <div class="graphic-label">Discover NU</div>
             <div class="graphic-sub">day event · open to all</div>
           </div>
           <div class="graphic-card">
-            <span class="graphic-emoji">🌙</span>
+            <span class="graphic-icon"><EventIcon name="moon" :size="28" /></span>
             <div class="graphic-label">NU Overnight</div>
             <div class="graphic-sub">stay with a student host</div>
           </div>
           <div class="graphic-card">
-            <span class="graphic-emoji">🎓</span>
+            <span class="graphic-icon"><EventIcon name="graduation-cap" :size="28" /></span>
             <div class="graphic-label">Scholarships</div>
             <div class="graphic-sub">president's + program events</div>
           </div>
@@ -63,7 +63,7 @@ useSeoMeta({
         <div class="missions-grid">
           <article class="mission-card card reveal" style="--card-accent: var(--nu-tour); --card-bg: rgba(251,217,69,.12);">
             <div class="mission-header">
-              <span class="mission-emoji">🏔️</span>
+              <span class="mission-icon"><EventIcon name="mountain" :size="34" /></span>
               <span class="badge badge-gold">Day Event</span>
             </div>
             <h3 class="mission-name">Discover NU</h3>
@@ -77,7 +77,7 @@ useSeoMeta({
 
           <article class="mission-card card reveal" style="--card-accent: var(--accent-teal); --card-bg: rgba(0,104,187,.1);">
             <div class="mission-header">
-              <span class="mission-emoji">🌙</span>
+              <span class="mission-icon"><EventIcon name="moon" :size="34" /></span>
               <span class="badge badge-teal">Overnight</span>
             </div>
             <h3 class="mission-name">NU Overnight</h3>
@@ -91,7 +91,7 @@ useSeoMeta({
 
           <article class="mission-card card reveal" style="--card-accent: var(--nu-tour); --card-bg: rgba(251,217,69,.12);">
             <div class="mission-header">
-              <span class="mission-emoji">🎓</span>
+              <span class="mission-icon"><EventIcon name="graduation-cap" :size="34" /></span>
               <span class="badge badge-gold">Scholarship</span>
             </div>
             <h3 class="mission-name">President's Scholarship Event</h3>
@@ -104,7 +104,7 @@ useSeoMeta({
 
           <article class="mission-card card reveal" style="--card-accent: var(--nu-tour); --card-bg: rgba(251,217,69,.12);">
             <div class="mission-header">
-              <span class="mission-emoji">🧪</span>
+              <span class="mission-icon"><EventIcon name="flask" :size="34" /></span>
               <span class="badge badge-gold">Scholarship</span>
             </div>
             <h3 class="mission-name">Program Scholarship Event</h3>
@@ -117,7 +117,7 @@ useSeoMeta({
 
           <article class="mission-card card reveal" style="--card-accent: var(--accent-teal); --card-bg: rgba(0,104,187,.1);">
             <div class="mission-header">
-              <span class="mission-emoji">🎤</span>
+              <span class="mission-icon"><EventIcon name="mic" :size="34" /></span>
               <span class="badge badge-teal">Student Life</span>
             </div>
             <h3 class="mission-name">NU Backstage</h3>
@@ -231,7 +231,7 @@ useSeoMeta({
   text-align: center;
   display: flex; flex-direction: column; align-items: center; gap: 6px;
 }
-.graphic-emoji { font-size: 2rem; }
+.graphic-icon { color: var(--nu-tour); display: grid; place-items: center; }
 .graphic-label { font-family: var(--font-display); font-weight: 800; font-size: var(--text-xl); color: #fff; }
 .graphic-sub { font-size: var(--text-xs); color: rgba(240,244,248,.55); }
 .hero-wave { position: relative; margin-top: -2px; line-height: 0; }
@@ -255,7 +255,7 @@ useSeoMeta({
 }
 .mission-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
 .mission-header { display: flex; align-items: center; justify-content: space-between; }
-.mission-emoji { font-size: 2.4rem; }
+.mission-icon { color: var(--card-accent, var(--nu-blue)); display: grid; place-items: center; }
 .mission-name { font-family: var(--font-display); font-weight: 800; font-size: var(--text-3xl); color: var(--text-primary); letter-spacing: var(--tracking-tight); }
 .mission-tagline { font-family: var(--font-serif); font-style: italic; font-size: var(--text-lg); color: var(--text-secondary); line-height: var(--leading-snug); }
 .mission-desc { font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-relaxed); flex: 1; }

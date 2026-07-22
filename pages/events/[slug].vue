@@ -67,7 +67,7 @@ const printPage = () => window.print()
         <div class="event-hero-copy">
           <div class="event-meta">
             <span :class="`badge ${colors.tag}`">
-              {{ event.emoji }} {{ event.name }}
+              <EventIcon :name="event.icon" :size="14" /> {{ event.name }}
             </span>
             <span class="badge badge-dark">{{ selectedInst.timeStart }} – {{ selectedInst.timeEnd }}</span>
           </div>
@@ -108,7 +108,7 @@ const printPage = () => window.print()
               Register for {{ selectedInst.label }}
             </a>
             <a :href="event.swoopShopUrl" target="_blank" rel="noopener" class="btn btn-outline btn-lg" style="border-color: rgba(0,104,187,.4); color: #0068bb;">
-              🛍️ Swoop Shop
+              <EventIcon name="shopping-bag" :size="18" /> Swoop Shop
             </a>
             <button class="btn btn-outline btn-lg no-print" style="border-color: rgba(0,104,187,.4); color: #0068bb;" @click="printPage">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -175,7 +175,7 @@ const printPage = () => window.print()
               <div class="tl-dot" :style="`background: ${colors.accent}`" aria-hidden="true"></div>
               <div class="tl-content">
                 <div class="tl-header">
-                  <span class="tl-icon" aria-hidden="true">{{ item.icon }}</span>
+                  <span class="tl-icon" aria-hidden="true"><EventIcon :name="item.icon" :size="18" /></span>
                   <h3 class="tl-title">{{ item.title }}</h3>
                 </div>
                 <p v-if="item.description" class="tl-desc">{{ item.description }}</p>
@@ -200,7 +200,7 @@ const printPage = () => window.print()
               :key="i"
               class="bring-item"
             >
-              <span class="bring-icon" aria-hidden="true">{{ item.icon }}</span>
+              <span class="bring-icon" aria-hidden="true"><EventIcon :name="item.icon" :size="20" /></span>
               <span class="bring-text">{{ item.text }}</span>
             </div>
           </div>
@@ -222,7 +222,7 @@ const printPage = () => window.print()
         <!-- Parents section -->
         <section class="event-section parents-section" id="parents">
           <div class="parents-header">
-            <span class="parents-emoji" aria-hidden="true">👨‍👩‍👧</span>
+            <span class="parents-emoji" aria-hidden="true"><EventIcon name="users" :size="34" /></span>
             <div>
               <h2 class="event-section-title">{{ event.parentsTitle }}</h2>
               <p class="event-body-text">{{ event.parentsIntro }}</p>
@@ -235,7 +235,7 @@ const printPage = () => window.print()
               :key="i"
               class="parent-card card-ghost"
             >
-              <span class="parent-icon" aria-hidden="true">{{ item.icon }}</span>
+              <span class="parent-icon" aria-hidden="true"><EventIcon :name="item.icon" :size="22" /></span>
               <h3 class="parent-title">{{ item.title }}</h3>
               <p class="parent-body">{{ item.body }}</p>
             </div>
@@ -452,7 +452,7 @@ const printPage = () => window.print()
                 </td>
                 <td>
                   <p class="print-desc">{{ item.description }}</p>
-                  <p v-if="item.location" class="print-desc" style="font-style: italic; margin-top: 2pt;">📍 {{ item.location }}</p>
+                  <p v-if="item.location" class="print-desc" style="font-style: italic; margin-top: 2pt;">{{ item.location }}</p>
                 </td>
               </tr>
             </tbody>
