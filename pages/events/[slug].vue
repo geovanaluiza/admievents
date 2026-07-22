@@ -17,6 +17,7 @@ useSeoMeta({
 })
 
 const COLOR_MAP = {
+  navy:  { accent: 'var(--nu-blue)',       light: 'var(--accent-blue-light)',  tag: 'badge-teal'  },
   coral: { accent: 'var(--accent-coral)', light: 'var(--accent-coral-light)', tag: 'badge-coral' },
   teal:  { accent: 'var(--accent-teal)',  light: 'var(--accent-teal-light)',  tag: 'badge-teal'  },
   gold:  { accent: 'var(--accent-gold)',  light: 'var(--accent-gold-light)',  tag: 'badge-gold'  },
@@ -667,22 +668,28 @@ const printPage = () => window.print()
   white-space: nowrap;
 }
 .tl-dot {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  margin-top: 5px;
+  margin-top: 4px;
   flex: none;
   position: relative;
   z-index: 1;
+  box-shadow: 0 0 0 3px var(--bg-card), 0 0 0 4.5px var(--event-accent);
 }
 .timeline-item:not(:last-child) .tl-dot::after {
   content: '';
   position: absolute;
-  top: 12px;
+  top: 15px;
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  background: var(--border-subtle);
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--event-accent) 0 5px,
+    transparent 5px 11px
+  );
+  opacity: .45;
   height: calc(100% + 20px);
 }
 .tl-content { padding-bottom: 24px; }

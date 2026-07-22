@@ -70,7 +70,7 @@ useSeoMeta({
             <p class="mission-tagline">Your first look at what could be home.</p>
             <p class="mission-desc">A guided tour + admissions chat — perfect for first-timers figuring out if NU clicks. Meet professors, see the campus, and get all your questions answered.</p>
             <div class="mission-footer">
-              <a href="https://www.northwestu.edu/visit/discover-nu" target="_blank" rel="noopener" class="btn btn-navy btn-sm">Learn more →</a>
+              <a href="/events/discover-nu" class="btn btn-navy btn-sm">Learn more →</a>
               <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Register →</a>
             </div>
           </article>
@@ -84,7 +84,7 @@ useSeoMeta({
             <p class="mission-tagline">Sleep in a dorm. Eat in the dining hall. Be an NU Eagle for 24 hours.</p>
             <p class="mission-desc">Stay overnight with a student host, attend real classes, and see what a day in the life actually looks like. 6 dates available.</p>
             <div class="mission-footer">
-              <a href="https://www.northwestu.edu/visit/nu-overnight" target="_blank" rel="noopener" class="btn btn-navy btn-sm">Learn more →</a>
+              <a href="/events/nu-overnight" class="btn btn-navy btn-sm">Learn more →</a>
               <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Register →</a>
             </div>
           </article>
@@ -193,9 +193,10 @@ useSeoMeta({
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(0,104,187,.15) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(251,217,69,.08) 0%, transparent 60%);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700' viewBox='0 0 700 700'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1.5'%3E%3Ccircle cx='580' cy='120' r='40'/%3E%3Ccircle cx='580' cy='120' r='80'/%3E%3Ccircle cx='580' cy='120' r='125'/%3E%3Ccircle cx='580' cy='120' r='175'/%3E%3Ccircle cx='580' cy='120' r='230'/%3E%3Ccircle cx='580' cy='120' r='290'/%3E%3Ccircle cx='90' cy='610' r='45'/%3E%3Ccircle cx='90' cy='610' r='90'/%3E%3Ccircle cx='90' cy='610' r='140'/%3E%3Ccircle cx='90' cy='610' r='195'/%3E%3Ccircle cx='90' cy='610' r='255'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: top right;
+  background-size: min(90vw, 700px);
+  background-repeat: no-repeat;
   pointer-events: none;
 }
 .hero-inner {
@@ -241,10 +242,13 @@ useSeoMeta({
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
+  counter-reset: waypoint;
 }
 @media (min-width: 768px) { .missions-grid { grid-template-columns: 1fr 1fr; } }
 
 .mission-card {
+  position: relative;
+  counter-increment: waypoint;
   padding: clamp(24px, 4vw, 36px);
   border-top: 4px solid var(--card-accent);
   background: var(--card-bg, var(--bg-card));
@@ -252,6 +256,17 @@ useSeoMeta({
   flex-direction: column;
   gap: 12px;
   transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.mission-card::after {
+  content: '· ' counter(waypoint, decimal-leading-zero) ' ·';
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+  color: var(--text-muted);
 }
 .mission-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
 .mission-header { display: flex; align-items: center; justify-content: space-between; }
