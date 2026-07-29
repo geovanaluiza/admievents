@@ -592,33 +592,34 @@ const printPage = () => window.print()
   border-radius: var(--radius-xl);
   overflow: hidden;
   aspect-ratio: 16/9;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,104,187,.08);
+  border: 1px solid rgba(0,104,187,.18);
+  box-shadow: var(--shadow-md);
 }
 .video-thumb img {
   width: 100%; height: 100%;
   object-fit: cover;
-  opacity: .6;
 }
 .video-overlay {
   position: absolute;
   inset: 0;
   display: grid; place-items: center;
-  background: rgba(0,23,41,.35);
+  background: rgba(0,104,187,.10);
 }
 .play-ring {
-  width: 64px; height: 64px;
+  width: 72px; height: 72px;
   border-radius: 50%;
-  background: rgba(0,104,187,.15);
-  border: 2px solid rgba(0,104,187,.5);
+  background: rgba(255,255,255,.9);
+  border: 2px solid rgba(0,104,187,.4);
   color: #0068bb;
   display: grid; place-items: center;
   cursor: pointer;
   backdrop-filter: blur(8px);
+  box-shadow: var(--shadow-lg);
   transition: background var(--dur-fast) ease, transform var(--dur-fast) var(--ease-spring);
 }
-.play-ring:hover { background: rgba(255,255,255,.25); transform: scale(1.1); }
-.video-label { font-size: var(--text-sm); color: rgba(240,244,248,.7); font-weight: 500; }
+.play-ring:hover { background: #fff; transform: scale(1.1); }
+.video-label { font-size: var(--text-sm); color: var(--text-secondary); font-weight: 500; }
 .video-note { align-self: flex-start; }
 
 /* ── Event layout ────────────────────────────────────────── */

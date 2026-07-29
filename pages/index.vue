@@ -4,6 +4,15 @@ useSeoMeta({
   description: 'Discover NU, NU Overnight, and more. Tour the campus, meet our community, and find your place at Northwest University in Kirkland, WA.',
   robots: 'noindex, nofollow',
 })
+
+const reelItems = [
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/170923_nu_color_run_for_hope_9189.jpg', category: 'On-campus', title: 'Undergraduate admissions', link: 'https://www-dev.northwestu.edu/admissions', accent: '#000', textLight: true },
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/160407_campusphotos_1546.jpg', category: 'Anytime/Anywhere', title: 'Online programs', link: 'https://www-dev.northwestu.edu/online', accent: '#fbd945', textLight: false },
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/240613CMHC_Event--9.jpg', category: 'On-campus', title: 'Graduate degrees', link: 'https://www-dev.northwestu.edu/graduate', accent: '#fff', textLight: false },
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/CampusStudying-0190.jpg', category: 'On-campus', title: 'International education', link: 'https://www-dev.northwestu.edu/international', accent: '#000', textLight: true },
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/FallDay231108--2.jpg', category: 'At church', title: 'Northwest Partnership Program', link: 'https://www-dev.northwestu.edu/partnership', accent: '#000', textLight: true },
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/CommunityCrewKickoff-.jpg', category: 'In high school', title: 'Concurrent credit', link: 'https://www-dev.northwestu.edu/concurrent', accent: '#000', textLight: true },
+]
 </script>
 
 <template>
@@ -47,8 +56,28 @@ useSeoMeta({
 
       <div class="hero-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0 80L60 68C120 56 240 32 360 24C480 16 600 24 720 32C840 40 960 48 1080 48C1200 48 1320 40 1380 36L1440 32V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z" fill="#ffffff"/>
+          <path d="M0 80L60 68C120 56 240 32 360 24C480 16 600 24 720 32C840 40 960 48 1080 48C1200 48 1320 40 1380 36L1440 32V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z" fill="#fbd945"/>
         </svg>
+      </div>
+    </section>
+
+    <section class="reel-section">
+      <div class="reel">
+        <div class="reel-container">
+          <ul class="reel-list">
+            <li v-for="item in reelItems" :key="item.link">
+              <div class="reel-item">
+                <img :src="item.img" :alt="item.title">
+                <div class="reel-gradient" :style="{ background: `linear-gradient(-25deg, transparent 55%, ${item.accent})` }" />
+                <div :class="['reel-content', item.textLight ? 'reel-content-light' : 'reel-content-dark']">
+                  <p class="reel-category">{{ item.category }}</p>
+                  <h4 class="reel-title">{{ item.title }}</h4>
+                </div>
+                <a :href="item.link" class="reel-link" target="_blank" rel="noopener" />
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -310,9 +339,87 @@ useSeoMeta({
 .badge-teal { background: rgba(0,104,187,.15) !important; color: #0068bb !important; }
 
 /* ── Hardcoded backgrounds ── */
-.section { background: #ffffff !important; }
-.visit-cta { background: #eaf4fb !important; }
+.section { background: #fbd945 !important; }
+.section .section-sub { color: rgba(26,46,66,.8) !important; }
+.section .mission-card { background: #ffffff !important; }
+.visit-cta { background: #fbd945 !important; }
+.visit-cta .eyebrow-teal { color: #0068bb !important; }
 .visit-card { background: #ffffff !important; backdrop-filter: blur(12px) !important; }
 .stats-strip { background: #0068bb !important; color: #fff !important; }
+.stats-strip .stat-item strong { color: #fbd945 !important; }
+.stats-strip .stat-item span { color: rgba(255,255,255,.85) !important; }
+.stats-strip .stat-divider { background: rgba(255,255,255,.25) !important; }
 .hero { background: #0068bb !important; color: #fff !important; }
+
+/* ── Reel Section ── */
+.reel-section {
+  background: #1a2e42;
+  padding: 40px 0;
+}
+.reel {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.reel::-webkit-scrollbar { display: none; }
+.reel-container {
+  padding: 0 24px;
+}
+.reel-list {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: max-content;
+}
+.reel-item {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.reel-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reel-gradient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.reel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+}
+.reel-content-light { color: #fff; }
+.reel-content-dark { color: #1a2e42; }
+.reel-category {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+  opacity: 0.9;
+}
+.reel-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  margin: 0;
+}
+.reel-link {
+  position: absolute;
+  inset: 0;
+}
 </style>

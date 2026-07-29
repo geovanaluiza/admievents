@@ -225,12 +225,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 76px;
   gap: var(--space-6);
 }
 .brand { display: flex; align-items: center; gap: 10px; }
 .brand-mark {
-  width: 32px; height: 34px;
+  width: 48px; height: 51px;
   object-fit: contain;
   flex: none;
 }
@@ -276,7 +276,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .footer-inner { grid-template-columns: 1.5fr 2fr 1fr; }
 }
 .foot-brand { display: flex; align-items: center; gap: 14px; }
-.foot-brand img { width: 44px; }
+.foot-brand img { width: 64px; }
 .foot-brand strong {
   display: block;
   font-family: var(--font-display);
