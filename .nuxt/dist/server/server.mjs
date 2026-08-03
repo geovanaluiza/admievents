@@ -378,7 +378,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-DBTosUPi.js")
+    component: () => import("./_nuxt/index-C-p3xBqF.js")
   },
   {
     name: "events-slug",

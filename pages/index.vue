@@ -47,7 +47,7 @@ onUnmounted(() => {
     <section class="hero">
       <img
         class="hero-bg"
-        src="https://www-dev.northwestu.edu/assets/images/tests/170923_nu_color_run_for_hope_9189.jpg"
+        src="/images/WW_2025_Day1-2605.jpg"
         alt=""
         aria-hidden="true"
       />
