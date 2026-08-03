@@ -177,7 +177,7 @@ onUnmounted(() => {
       <div class="container">
         <header class="facts-head reveal">
           <p class="eyebrow">By the numbers</p>
-          <h2 class="facts-title">A snapshot of <em>what makes NU different.</em></h2>
+          <h2 class="facts-title">A snapshot of <em>what makes NU&nbsp;different.</em></h2>
         </header>
 
         <div class="facts-grid">
@@ -389,16 +389,16 @@ onUnmounted(() => {
 }
 .mission-name {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 800;
   font-style: italic;
   font-size: var(--text-3xl);
-  color: #fff;
+  color: #fbd945;
   letter-spacing: var(--tracking-tight);
   line-height: 1.1;
 }
 .mission-tagline {
   font-size: var(--text-base);
-  color: rgba(255,255,255,.8);
+  color: #fff;
   line-height: var(--leading-snug);
 }
 .mission-cta {
@@ -406,7 +406,7 @@ onUnmounted(() => {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: var(--text-sm);
-  color: #fff;
+  color: #fbd945;
 }
 .mission-hit { position: absolute; inset: 0; z-index: 3; }
 
@@ -425,6 +425,8 @@ onUnmounted(() => {
   letter-spacing: var(--tracking-tight);
   line-height: 1.15;
   margin-top: 12px;
+  text-wrap: balance;
+  max-width: 22ch;
 }
 .facts-title em {
   font-style: italic;
