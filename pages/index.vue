@@ -42,6 +42,8 @@ onUnmounted(() => {
   <div>
     <SiteHeader />
 
+    <div class="top-band" aria-hidden="true"></div>
+
     <section class="hero">
       <img
         class="hero-bg"
@@ -51,6 +53,13 @@ onUnmounted(() => {
       />
       <div class="hero-overlay" aria-hidden="true"></div>
 
+      <div class="hero-blob">
+        <div class="hero-blob-shape">
+          <h1 class="hero-title">DISCOVER<span class="hero-title-dot"></span></h1>
+          <span class="hero-bubble">NU</span>
+        </div>
+      </div>
+
       <div class="container hero-inner">
         <p class="eyebrow eyebrow-gold">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -58,7 +67,6 @@ onUnmounted(() => {
           </svg>
           Northwest University Admissions
         </p>
-        <h1 class="hero-title">Find your path.</h1>
         <p class="hero-sub">Five ways to experience campus. One that's yours.</p>
         <div class="hero-actions">
           <a href="#missions" class="btn btn-gold btn-lg">Find your event</a>
@@ -96,6 +104,7 @@ onUnmounted(() => {
     <section class="section" id="missions">
       <div class="container">
         <header class="section-head reveal">
+          <hr class="divider" aria-hidden="true" />
           <p class="eyebrow">Upcoming events</p>
           <h2 class="section-title">Choose your adventure</h2>
         </header>
@@ -164,41 +173,41 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <div class="ridge" aria-hidden="true">
-      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0 60V42L120 26L240 46L360 14L480 36L600 8L720 30L840 18L960 44L1080 22L1200 38L1320 10L1440 34V60H0Z" fill="#0068bb"/>
-      </svg>
-    </div>
+    <section class="key-facts">
+      <div class="container">
+        <header class="facts-head reveal">
+          <p class="eyebrow">By the numbers</p>
+          <h2 class="facts-title">A snapshot of <em>what makes NU different.</em></h2>
+        </header>
 
-    <section class="stats-strip">
-      <div class="container stats-inner">
-        <div class="stat-item">
-          <strong>100%</strong>
-          <span>of programs include real internships</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <strong>94%</strong>
-          <span>of grads employed or in grad school in 6 months</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <strong>18:1</strong>
-          <span>student-to-faculty ratio</span>
-        </div>
-        <div class="stat-divider" aria-hidden="true"></div>
-        <div class="stat-item">
-          <strong>90%+</strong>
-          <span>of students receive financial aid</span>
+        <div class="facts-grid">
+          <div class="fact-row reveal">
+            <div class="fact-num">100%</div>
+            <div class="fact-body">
+              <p class="fact-label">Academic programs with built-in internships</p>
+            </div>
+          </div>
+          <div class="fact-row reveal">
+            <div class="fact-num">94%</div>
+            <div class="fact-body">
+              <p class="fact-label">of graduates employed or in grad school within six months</p>
+            </div>
+          </div>
+          <div class="fact-row reveal">
+            <div class="fact-num">18:1</div>
+            <div class="fact-body">
+              <p class="fact-label">Student-to-faculty ratio — your professors know your name</p>
+            </div>
+          </div>
+          <div class="fact-row reveal">
+            <div class="fact-num">90%+</div>
+            <div class="fact-body">
+              <p class="fact-label">of students receive financial aid or scholarships</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
-    <div class="ridge ridge-flip" aria-hidden="true">
-      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0 60V42L120 26L240 46L360 14L480 36L600 8L720 30L840 18L960 44L1080 22L1200 38L1320 10L1440 34V60H0Z" fill="#0068bb"/>
-      </svg>
-    </div>
 
     <section class="section visit-cta">
       <div class="container">
@@ -227,10 +236,15 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
+.top-band {
+  height: 12px;
+  background: #fbd945;
+}
+
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: clamp(520px, 82vh, 760px);
+  min-height: clamp(560px, 86vh, 820px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -247,25 +261,62 @@ onUnmounted(() => {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,40,80,.78) 0%, rgba(0,40,80,.35) 45%, rgba(0,40,80,.15) 100%);
+  background: linear-gradient(to top, rgba(0,40,80,.7) 0%, rgba(0,40,80,.25) 45%, rgba(0,40,80,.05) 100%);
 }
-.hero-inner {
+
+/* DISCOVER NU — blob azul + bolha amarela */
+.hero-blob {
+  position: absolute;
+  top: clamp(20px, 4vw, 48px);
+  left: clamp(20px, 5vw, 64px);
+  z-index: 2;
+}
+.hero-blob-shape {
   position: relative;
-  padding-bottom: clamp(72px, 9vw, 110px);
+  background: var(--nu-blue);
+  padding: clamp(20px, 3vw, 32px) clamp(28px, 5vw, 56px);
+  transform: rotate(-3deg);
+  border-radius: 18px 22px 20px 24px;
+  display: inline-flex;
+  align-items: center;
 }
 .hero-title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: var(--text-hero);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
   letter-spacing: var(--tracking-tight);
   color: #fff;
-  line-height: 1.0;
-  margin-bottom: 16px;
-  max-width: 12ch;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+.hero-title-dot { display: none; }
+.hero-bubble {
+  display: inline-grid;
+  place-items: center;
+  width: clamp(54px, 7vw, 84px);
+  height: clamp(54px, 7vw, 84px);
+  border-radius: 50%;
+  background: #fbd945;
+  color: var(--nu-blue);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+  letter-spacing: 0;
+  margin-left: -6px;
+  text-transform: uppercase;
+}
+
+.hero-inner {
+  position: relative;
+  padding-bottom: clamp(72px, 9vw, 110px);
 }
 .hero-sub {
-  font-size: var(--text-xl);
-  color: rgba(255,255,255,.85);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  color: #fff;
   line-height: var(--leading-snug);
   max-width: 40ch;
   margin-bottom: 32px;
@@ -273,11 +324,6 @@ onUnmounted(() => {
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-wave { position: relative; margin-top: -2px; line-height: 0; }
 .hero-wave svg { width: 100%; display: block; }
-
-.ridge { line-height: 0; margin-bottom: -1px; background: #ffffff; }
-.ridge svg { width: 100%; height: clamp(30px, 5vw, 60px); display: block; }
-.ridge-flip { margin-bottom: 0; margin-top: -1px; }
-.ridge-flip svg { transform: scaleY(-1); }
 
 .missions-grid {
   display: grid;
@@ -343,10 +389,12 @@ onUnmounted(() => {
 }
 .mission-name {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
+  font-style: italic;
   font-size: var(--text-3xl);
   color: #fff;
   letter-spacing: var(--tracking-tight);
+  line-height: 1.1;
 }
 .mission-tagline {
   font-size: var(--text-base);
@@ -362,24 +410,60 @@ onUnmounted(() => {
 }
 .mission-hit { position: absolute; inset: 0; z-index: 3; }
 
-.stats-strip { background: var(--bg-dark); color: var(--text-on-dark); padding: clamp(40px, 5vw, 56px) 0; position: relative; overflow: hidden; }
-.stats-strip::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700' viewBox='0 0 700 700'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.06' stroke-width='1.5'%3E%3Ccircle cx='110' cy='580' r='45'/%3E%3Ccircle cx='110' cy='580' r='90'/%3E%3Ccircle cx='110' cy='580' r='140'/%3E%3Ccircle cx='110' cy='580' r='195'/%3E%3Ccircle cx='110' cy='580' r='255'/%3E%3Ccircle cx='620' cy='90' r='40'/%3E%3Ccircle cx='620' cy='90' r='80'/%3E%3Ccircle cx='620' cy='90' r='125'/%3E%3Ccircle cx='620' cy='90' r='175'/%3E%3C/g%3E%3C/svg%3E");
-  background-position: center;
-  background-size: min(90vw, 700px);
-  background-repeat: no-repeat;
-  pointer-events: none;
+/* ── Key facts ── */
+.key-facts {
+  background: #ffffff;
+  padding: clamp(72px, 9vw, 120px) 0;
+  border-top: 1px solid var(--border-subtle);
 }
-.stats-inner { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 40px); align-items: center; }
-@media (min-width: 768px) { .stats-inner { grid-template-columns: repeat(4, 1fr); } }
-.stat-item { text-align: center; }
-.stat-item strong { display: block; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--accent-gold); margin-bottom: 4px; }
-.stat-item span { font-size: var(--text-sm); color: rgba(240,244,248,.65); line-height: var(--leading-snug); }
-.stat-divider { display: none; }
-@media (min-width: 768px) { .stat-divider { display: block; width: 1px; height: 48px; background: rgba(255,255,255,.1); margin: 0 auto; } }
+.facts-head { margin-bottom: clamp(48px, 6vw, 80px); max-width: 720px; }
+.facts-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.15;
+  margin-top: 12px;
+}
+.facts-title em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--nu-blue);
+}
+.facts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+@media (min-width: 768px) {
+  .facts-grid { grid-template-columns: 1fr 1fr; gap: 0 80px; }
+}
+.fact-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 28px;
+  align-items: baseline;
+  padding: clamp(28px, 4vw, 40px) 0;
+  border-top: 1px solid var(--border-subtle);
+}
+.fact-row:last-child { border-bottom: 1px solid var(--border-subtle); }
+.fact-num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: var(--nu-blue);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+  min-width: 1.4ch;
+}
+.fact-label {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: var(--leading-snug);
+  max-width: 32ch;
+}
 
 .visit-cta { background: var(--bg-base); }
 .visit-card { padding: clamp(32px, 5vw, 52px); display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; }
@@ -395,7 +479,7 @@ onUnmounted(() => {
 .eyebrow-gold { color: #fbd945 !important; }
 .eyebrow-teal { color: #44ba82 !important; }
 
-.section-title { color: #1a2e42 !important; font-size: 2.5rem !important; }
+.section-title { color: var(--nu-blue) !important; font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.4rem) !important; letter-spacing: var(--tracking-tight); line-height: 1.05; text-transform: none; }
 .section-sub { color: #4a5568 !important; }
 .mission-name { color: #1a2e42 !important; }
 .mission-tagline { color: #4a5568 !important; }
@@ -407,16 +491,17 @@ onUnmounted(() => {
 
 /* ── Hardcoded backgrounds ── */
 .section { background: #ffffff !important; }
-.visit-cta { background: #ffffff !important; }
-.visit-card { background: #ffffff !important; backdrop-filter: blur(12px) !important; }
-.stats-strip { background: #0068bb !important; color: #fff !important; }
-.stats-strip .stat-item strong { color: #fbd945 !important; }
-.stats-strip .stat-item span { color: rgba(255,255,255,.85) !important; }
-.stats-strip .stat-divider { background: rgba(255,255,255,.25) !important; }
-.hero { background: #0068bb !important; color: #fff !important; }
+.divider {
+  border: 0;
+  height: 4px;
+  width: 220px;
+  margin: 0 0 24px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--nu-sky) 0%, var(--nu-leaf) 50%, var(--nu-tour) 100%);
+}
 
 /* ── Home video ── */
-.video-section { background: #ffffff; }
+.video-section { background: #ffffff; padding: clamp(48px, 7vw, 88px) 0 0; }
 .home-video {
   position: relative;
   width: 100%;
