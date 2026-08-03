@@ -7,15 +7,6 @@ useSeoMeta({
   robots: 'noindex, nofollow',
 })
 
-const reelItems = [
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/170923_nu_color_run_for_hope_9189.jpg', title: 'Undergraduate admissions', link: 'https://www-dev.northwestu.edu/admissions' },
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/160407_campusphotos_1546.jpg', title: 'Online programs', link: 'https://www-dev.northwestu.edu/online' },
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/240613CMHC_Event--9.jpg', title: 'Graduate degrees', link: 'https://www-dev.northwestu.edu/graduate' },
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/CampusStudying-0190.jpg', title: 'International education', link: 'https://www-dev.northwestu.edu/international' },
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/FallDay231108--2.jpg', title: 'Northwest Partnership Program', link: 'https://www-dev.northwestu.edu/partnership' },
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/CommunityCrewKickoff-.jpg', title: 'Concurrent credit', link: 'https://www-dev.northwestu.edu/concurrent' },
-]
-
 let reloadTimer: ReturnType<typeof setInterval> | null = null
 let inactivityTimer: ReturnType<typeof setTimeout> | null = null
 
@@ -81,41 +72,24 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <section class="reel-section">
-      <div class="reel">
-        <div class="reel-container">
-          <ul class="reel-list">
-            <li v-for="item in reelItems" :key="item.link">
-              <div class="reel-item">
-                <img :src="item.img" :alt="item.title">
-                <a :href="item.link" class="reel-link" target="_blank" rel="noopener" :aria-label="item.title" />
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <section class="video-section">
-      <div class="container">
-        <div class="home-video reveal">
-          <iframe
-            v-if="homeVideoPlaying"
-            src="https://www.youtube.com/embed/UGxjeZtmvaE?autoplay=1&rel=0"
-            title="Northwest University campus video"
-            class="home-video-iframe"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-          <template v-else>
-            <img src="https://i.ytimg.com/vi/UGxjeZtmvaE/maxresdefault.jpg" alt="Northwest University campus video" loading="lazy" />
-            <button class="play-ring" aria-label="Play campus video" @click="homeVideoPlaying = true">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </button>
-          </template>
-        </div>
+      <div class="home-video reveal">
+        <iframe
+          v-if="homeVideoPlaying"
+          src="https://www.youtube.com/embed/UGxjeZtmvaE?autoplay=1&rel=0"
+          title="Northwest University campus video"
+          class="home-video-iframe"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <template v-else>
+          <img src="https://i.ytimg.com/vi/UGxjeZtmvaE/maxresdefault.jpg" alt="Northwest University campus video" loading="lazy" />
+          <button class="play-ring" aria-label="Play campus video" @click="homeVideoPlaying = true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
+        </template>
       </div>
     </section>
 
@@ -442,15 +416,13 @@ onUnmounted(() => {
 .hero { background: #0068bb !important; color: #fff !important; }
 
 /* ── Home video ── */
-.video-section { background: #ffffff; padding: 0 0 clamp(40px, 5vw, 56px); }
+.video-section { background: #ffffff; }
 .home-video {
   position: relative;
-  border-radius: var(--radius-xl);
+  width: 100%;
+  aspect-ratio: 21/9;
+  max-height: 82vh;
   overflow: hidden;
-  aspect-ratio: 16/9;
-  max-width: 900px;
-  margin-inline: auto;
-  box-shadow: var(--shadow-xl);
 }
 .home-video img {
   position: absolute;
@@ -471,7 +443,7 @@ onUnmounted(() => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 76px; height: 76px;
+  width: 96px; height: 96px;
   border-radius: 50%;
   background: rgba(255,255,255,.92);
   border: 2px solid rgba(0,104,187,.4);
@@ -482,49 +454,4 @@ onUnmounted(() => {
   transition: background var(--dur-fast) ease, transform var(--dur-fast) var(--ease-spring);
 }
 .play-ring:hover { background: #fff; transform: translate(-50%, -50%) scale(1.1); }
-
-/* ── Reel Section ── */
-.reel-section {
-  background: #ffffff;
-  padding: 40px 0;
-}
-.reel {
-  width: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.reel::-webkit-scrollbar { display: none; }
-.reel-container {
-  padding: 0 24px;
-}
-.reel-list {
-  display: flex;
-  gap: 12px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: max-content;
-}
-.reel-item {
-  position: relative;
-  width: 320px;
-  height: 420px;
-  border-radius: 16px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.reel-item img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--dur-slow) var(--ease-out);
-}
-.reel-item:hover img { transform: scale(1.04); }
-.reel-link {
-  position: absolute;
-  inset: 0;
-}
 </style>
