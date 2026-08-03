@@ -80,6 +80,42 @@ onUnmounted(() => {
       </div>
     </section>
 
+    <section class="key-facts">
+      <div class="container">
+        <header class="facts-head reveal">
+          <p class="eyebrow">By the numbers</p>
+          <h2 class="facts-title">A snapshot of <em>what makes NU&nbsp;different.</em></h2>
+        </header>
+
+        <div class="facts-grid">
+          <div class="fact-row reveal">
+            <div class="fact-num">100%</div>
+            <div class="fact-body">
+              <p class="fact-label">Academic programs with built-in internships</p>
+            </div>
+          </div>
+          <div class="fact-row reveal">
+            <div class="fact-num">94%</div>
+            <div class="fact-body">
+              <p class="fact-label">of graduates employed or in grad school within six months</p>
+            </div>
+          </div>
+          <div class="fact-row reveal">
+            <div class="fact-num">18:1</div>
+            <div class="fact-body">
+              <p class="fact-label">Student-to-faculty ratio — your professors know your name</p>
+            </div>
+          </div>
+          <div class="fact-row reveal">
+            <div class="fact-num">90%+</div>
+            <div class="fact-body">
+              <p class="fact-label">of students receive financial aid or scholarships</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="video-section">
       <div class="home-video reveal">
         <iframe
@@ -135,7 +171,7 @@ onUnmounted(() => {
           </article>
 
           <article class="mission-card reveal">
-            <img class="mission-photo" src="https://www-dev.northwestu.edu/assets/images/tests/160407_campusphotos_1546.jpg" alt="Students working together in a classroom" loading="lazy" />
+            <img class="mission-photo" src="https://www-dev.northwestu.edu/assets/images/tests/CampusStudying-0190.jpg" alt="High-achieving NU students studying in the library" loading="lazy" />
             <div class="mission-scrim" aria-hidden="true"></div>
             <div class="mission-content">
               <p class="mission-category">Scholarship</p>
@@ -169,42 +205,6 @@ onUnmounted(() => {
             </div>
             <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="mission-hit" aria-label="Register for NU Backstage"></a>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="key-facts">
-      <div class="container">
-        <header class="facts-head reveal">
-          <p class="eyebrow">By the numbers</p>
-          <h2 class="facts-title">A snapshot of <em>what makes NU&nbsp;different.</em></h2>
-        </header>
-
-        <div class="facts-grid">
-          <div class="fact-row reveal">
-            <div class="fact-num">100%</div>
-            <div class="fact-body">
-              <p class="fact-label">Academic programs with built-in internships</p>
-            </div>
-          </div>
-          <div class="fact-row reveal">
-            <div class="fact-num">94%</div>
-            <div class="fact-body">
-              <p class="fact-label">of graduates employed or in grad school within six months</p>
-            </div>
-          </div>
-          <div class="fact-row reveal">
-            <div class="fact-num">18:1</div>
-            <div class="fact-body">
-              <p class="fact-label">Student-to-faculty ratio — your professors know your name</p>
-            </div>
-          </div>
-          <div class="fact-row reveal">
-            <div class="fact-num">90%+</div>
-            <div class="fact-body">
-              <p class="fact-label">of students receive financial aid or scholarships</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
