@@ -50,43 +50,31 @@ onUnmounted(() => {
     <SiteHeader />
 
     <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow eyebrow-gold">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Northwest University Admissions
-          </p>
-          <h1 class="hero-title">Find your event.</h1>
-          <p class="hero-sub">
-            Five different ways to experience campus — pick the one that fits your student.
-            Kirkland, WA — 20 min from Seattle.
-          </p>
-        </div>
+      <img
+        class="hero-bg"
+        src="https://www-dev.northwestu.edu/assets/images/tests/170923_nu_color_run_for_hope_9189.jpg"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="hero-overlay" aria-hidden="true"></div>
 
-        <div class="hero-graphic" aria-hidden="true">
-          <div class="graphic-card">
-            <span class="graphic-icon"><EventIcon name="mountain" :size="28" /></span>
-            <div class="graphic-label">Discover NU</div>
-            <div class="graphic-sub">day event · open to all</div>
-          </div>
-          <div class="graphic-card">
-            <span class="graphic-icon"><EventIcon name="moon" :size="28" /></span>
-            <div class="graphic-label">NU Overnight</div>
-            <div class="graphic-sub">stay with a student host</div>
-          </div>
-          <div class="graphic-card">
-            <span class="graphic-icon"><EventIcon name="graduation-cap" :size="28" /></span>
-            <div class="graphic-label">Scholarships</div>
-            <div class="graphic-sub">president's + program events</div>
-          </div>
+      <div class="container hero-inner">
+        <p class="eyebrow eyebrow-gold">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Northwest University Admissions
+        </p>
+        <h1 class="hero-title">Find your path.</h1>
+        <p class="hero-sub">Five ways to experience campus. One that's yours.</p>
+        <div class="hero-actions">
+          <a href="#missions" class="btn btn-gold btn-lg">Find your event</a>
         </div>
       </div>
 
       <div class="hero-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <path d="M0 80L60 68C120 56 240 32 360 24C480 16 600 24 720 32C840 40 960 48 1080 48C1200 48 1320 40 1380 36L1440 32V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z" fill="#fbd945"/>
+          <path d="M0 80L60 68C120 56 240 32 360 24C480 16 600 24 720 32C840 40 960 48 1080 48C1200 48 1320 40 1380 36L1440 32V80H1380C1320 80 1200 80 1080 80C960 80 840 80 720 80C600 80 480 80 360 80C240 80 120 80 60 80H0Z" fill="#ffffff"/>
         </svg>
       </div>
     </section>
@@ -111,84 +99,82 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="missions">
       <div class="container">
         <header class="section-head reveal">
           <p class="eyebrow">Upcoming events</p>
-          <h2 class="section-title">Choose your path</h2>
-          <p class="section-sub">Each event is a different way to get to know Northwest University.</p>
+          <h2 class="section-title">Choose your adventure</h2>
         </header>
 
         <div class="missions-grid">
-          <article class="mission-card card reveal" style="--card-accent: var(--nu-tour); --card-bg: rgba(251,217,69,.12);">
-            <div class="mission-header">
-              <span class="mission-icon"><EventIcon name="mountain" :size="34" /></span>
-              <span class="badge badge-gold">Day Event</span>
+          <article class="mission-card reveal">
+            <img class="mission-photo" src="https://www-dev.northwestu.edu/assets/images/tests/FallDay231108--2.jpg" alt="Students walking across the NU campus on a fall day" loading="lazy" />
+            <div class="mission-scrim" aria-hidden="true"></div>
+            <div class="mission-content">
+              <p class="mission-category">Day event · open to all</p>
+              <h3 class="mission-name">Discover NU</h3>
+              <p class="mission-tagline">Your first look at what could be home.</p>
+              <span class="mission-cta">See the day →</span>
             </div>
-            <h3 class="mission-name">Discover NU</h3>
-            <p class="mission-tagline">Your first look at what could be home.</p>
-            <p class="mission-desc">A guided tour + admissions chat — perfect for first-timers figuring out if NU clicks. Meet professors, see the campus, and get all your questions answered.</p>
-            <div class="mission-footer">
-              <a href="/events/discover-nu" class="btn btn-navy btn-sm">Learn more →</a>
-              <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Register →</a>
-            </div>
+            <a href="/events/discover-nu" class="mission-hit" aria-label="Discover NU event details"></a>
           </article>
 
-          <article class="mission-card card reveal" style="--card-accent: var(--accent-teal); --card-bg: rgba(0,104,187,.1);">
-            <div class="mission-header">
-              <span class="mission-icon"><EventIcon name="moon" :size="34" /></span>
-              <span class="badge badge-teal">Overnight</span>
+          <article class="mission-card reveal">
+            <img class="mission-photo" src="https://www-dev.northwestu.edu/assets/images/tests/240613CMHC_Event--9.jpg" alt="Evening event on the NU campus" loading="lazy" />
+            <div class="mission-scrim" aria-hidden="true"></div>
+            <div class="mission-content">
+              <p class="mission-category">Overnight · 6 dates</p>
+              <h3 class="mission-name">NU Overnight</h3>
+              <p class="mission-tagline">Be an NU Eagle for 24 hours.</p>
+              <span class="mission-cta">Pick your date →</span>
             </div>
-            <h3 class="mission-name">NU Overnight</h3>
-            <p class="mission-tagline">Sleep in a dorm. Eat in the dining hall. Be an NU Eagle for 24 hours.</p>
-            <p class="mission-desc">Stay overnight with a student host, attend real classes, and see what a day in the life actually looks like. 6 dates available.</p>
-            <div class="mission-footer">
-              <a href="/events/nu-overnight" class="btn btn-navy btn-sm">Learn more →</a>
-              <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Register →</a>
-            </div>
+            <a href="/events/nu-overnight" class="mission-hit" aria-label="NU Overnight event details"></a>
           </article>
 
-          <article class="mission-card card reveal" style="--card-accent: var(--nu-tour); --card-bg: rgba(251,217,69,.12);">
-            <div class="mission-header">
-              <span class="mission-icon"><EventIcon name="graduation-cap" :size="34" /></span>
-              <span class="badge badge-gold">Scholarship</span>
+          <article class="mission-card reveal">
+            <img class="mission-photo" src="https://www-dev.northwestu.edu/assets/images/tests/CampusStudying-0190.jpg" alt="Students studying together on campus" loading="lazy" />
+            <div class="mission-scrim" aria-hidden="true"></div>
+            <div class="mission-content">
+              <p class="mission-category">Scholarship</p>
+              <h3 class="mission-name">President's Scholarship</h3>
+              <p class="mission-tagline">A two-day deep dive for high-achieving scholars.</p>
+              <span class="mission-cta">Register →</span>
             </div>
-            <h3 class="mission-name">President's Scholarship Event</h3>
-            <p class="mission-tagline">A two-day deep dive for high-achieving scholars.</p>
-            <p class="mission-desc">Built for students aiming for the President's Scholarship. Honors coursework, scholarship prep, faculty meet-and-greet, and dedicated parent sessions.</p>
-            <div class="mission-footer">
-              <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Register →</a>
-            </div>
+            <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="mission-hit" aria-label="Register for the President's Scholarship Event"></a>
           </article>
 
-          <article class="mission-card card reveal" style="--card-accent: var(--nu-tour); --card-bg: rgba(251,217,69,.12);">
-            <div class="mission-header">
-              <span class="mission-icon"><EventIcon name="flask" :size="34" /></span>
-              <span class="badge badge-gold">Scholarship</span>
+          <article class="mission-card reveal">
+            <img class="mission-photo" src="https://www-dev.northwestu.edu/assets/images/tests/160407_campusphotos_1546.jpg" alt="Class in session at Northwest University" loading="lazy" />
+            <div class="mission-scrim" aria-hidden="true"></div>
+            <div class="mission-content">
+              <p class="mission-category">Scholarship</p>
+              <h3 class="mission-name">Program Scholarship</h3>
+              <p class="mission-tagline">See your program in action.</p>
+              <span class="mission-cta">Register →</span>
             </div>
-            <h3 class="mission-name">Program Scholarship Event</h3>
-            <p class="mission-tagline">See your program in action — and meet the faculty who will teach you.</p>
-            <p class="mission-desc">Focused on specific academic programs. Attend real classes, meet professors, and explore scholarship opportunities in your field of interest.</p>
-            <div class="mission-footer">
-              <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Register →</a>
-            </div>
+            <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="mission-hit" aria-label="Register for the Program Scholarship Event"></a>
           </article>
 
-          <article class="mission-card card reveal" style="--card-accent: var(--accent-teal); --card-bg: rgba(0,104,187,.1);">
-            <div class="mission-header">
-              <span class="mission-icon"><EventIcon name="mic" :size="34" /></span>
-              <span class="badge badge-teal">Student Life</span>
+          <article class="mission-card reveal">
+            <img class="mission-photo" src="https://www-dev.northwestu.edu/assets/images/tests/CommunityCrewKickoff-.jpg" alt="Students at a campus community event" loading="lazy" />
+            <div class="mission-scrim" aria-hidden="true"></div>
+            <div class="mission-content">
+              <p class="mission-category">Student life</p>
+              <h3 class="mission-name">NU Backstage</h3>
+              <p class="mission-tagline">Concerts, Lip Sync Battle, the whole crew.</p>
+              <span class="mission-cta">Register →</span>
             </div>
-            <h3 class="mission-name">NU Backstage</h3>
-            <p class="mission-tagline">The student life event. Concerts, Lip Sync Battle, and the whole NU crew.</p>
-            <p class="mission-desc">Two days of music, community, and adventure. The most energetic event NU offers — featuring live student performances and hands-on activities.</p>
-            <div class="mission-footer">
-              <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Register →</a>
-            </div>
+            <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="mission-hit" aria-label="Register for NU Backstage"></a>
           </article>
         </div>
       </div>
     </section>
+
+    <div class="ridge" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 60V42L120 26L240 46L360 14L480 36L600 8L720 30L840 18L960 44L1080 22L1200 38L1320 10L1440 34V60H0Z" fill="#0068bb"/>
+      </svg>
+    </div>
 
     <section class="stats-strip">
       <div class="container stats-inner">
@@ -213,6 +199,12 @@ onUnmounted(() => {
         </div>
       </div>
     </section>
+
+    <div class="ridge ridge-flip" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 60V42L120 26L240 46L360 14L480 36L600 8L720 30L840 18L960 44L1080 22L1200 38L1320 10L1440 34V60H0Z" fill="#0068bb"/>
+      </svg>
+    </div>
 
     <section class="section visit-cta">
       <div class="container">
@@ -242,30 +234,31 @@ onUnmounted(() => {
 
 <style scoped>
 .hero {
-  background: var(--bg-dark);
-  color: var(--text-on-dark);
-  padding: clamp(72px, 10vw, 120px) 0 0;
   position: relative;
   overflow: hidden;
+  min-height: clamp(520px, 82vh, 760px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--nu-blue);
+  color: #fff;
 }
-.hero::before {
-  content: '';
+.hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700' viewBox='0 0 700 700'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.07' stroke-width='1.5'%3E%3Ccircle cx='580' cy='120' r='40'/%3E%3Ccircle cx='580' cy='120' r='80'/%3E%3Ccircle cx='580' cy='120' r='125'/%3E%3Ccircle cx='580' cy='120' r='175'/%3E%3Ccircle cx='580' cy='120' r='230'/%3E%3Ccircle cx='580' cy='120' r='290'/%3E%3Ccircle cx='90' cy='610' r='45'/%3E%3Ccircle cx='90' cy='610' r='90'/%3E%3Ccircle cx='90' cy='610' r='140'/%3E%3Ccircle cx='90' cy='610' r='195'/%3E%3Ccircle cx='90' cy='610' r='255'/%3E%3C/g%3E%3C/svg%3E");
-  background-position: top right;
-  background-size: min(90vw, 700px);
-  background-repeat: no-repeat;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,40,80,.78) 0%, rgba(0,40,80,.35) 45%, rgba(0,40,80,.15) 100%);
 }
 .hero-inner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(40px, 6vw, 72px);
-  align-items: center;
-  padding-bottom: clamp(60px, 8vw, 100px);
+  position: relative;
+  padding-bottom: clamp(72px, 9vw, 110px);
 }
-@media (min-width: 900px) { .hero-inner { grid-template-columns: 1.2fr 1fr; } }
 .hero-title {
   font-family: var(--font-display);
   font-weight: 800;
@@ -273,70 +266,120 @@ onUnmounted(() => {
   letter-spacing: var(--tracking-tight);
   color: #fff;
   line-height: 1.0;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  max-width: 12ch;
 }
 .hero-sub {
-  font-size: var(--text-lg);
-  color: rgba(240,244,248,.75);
-  line-height: var(--leading-relaxed);
-  max-width: 44ch;
+  font-size: var(--text-xl);
+  color: rgba(255,255,255,.85);
+  line-height: var(--leading-snug);
+  max-width: 40ch;
   margin-bottom: 32px;
 }
-.hero-graphic { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
-.graphic-card {
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: var(--radius-lg);
-  padding: 20px 16px;
-  text-align: center;
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-}
-.graphic-icon { color: var(--nu-tour); display: grid; place-items: center; }
-.graphic-label { font-family: var(--font-display); font-weight: 800; font-size: var(--text-xl); color: #fff; }
-.graphic-sub { font-size: var(--text-xs); color: rgba(240,244,248,.55); }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero-wave { position: relative; margin-top: -2px; line-height: 0; }
 .hero-wave svg { width: 100%; display: block; }
+
+.ridge { line-height: 0; margin-bottom: -1px; background: #ffffff; }
+.ridge svg { width: 100%; height: clamp(30px, 5vw, 60px); display: block; }
+.ridge-flip { margin-bottom: 0; margin-top: -1px; }
+.ridge-flip svg { transform: scaleY(-1); }
 
 .missions-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 20px;
   counter-reset: waypoint;
 }
-@media (min-width: 768px) { .missions-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 640px) { .missions-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .missions-grid { grid-template-columns: repeat(3, 1fr); } }
 
 .mission-card {
   position: relative;
   counter-increment: waypoint;
-  padding: clamp(24px, 4vw, 36px);
-  border-top: 4px solid var(--card-accent);
-  background: var(--card-bg, var(--bg-card));
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 420px;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  align-items: flex-end;
+  box-shadow: var(--shadow-md);
   transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
 }
+.mission-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
 .mission-card::after {
   content: '· ' counter(waypoint, decimal-leading-zero) ' ·';
   position: absolute;
-  top: 16px;
+  top: 18px;
   right: 20px;
   font-family: var(--font-display);
   font-weight: 800;
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-widest);
-  color: var(--text-muted);
+  color: rgba(255,255,255,.85);
+  z-index: 2;
 }
-.mission-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-xl); }
-.mission-header { display: flex; align-items: center; justify-content: space-between; }
-.mission-icon { color: var(--card-accent, var(--nu-blue)); display: grid; place-items: center; }
-.mission-name { font-family: var(--font-display); font-weight: 800; font-size: var(--text-3xl); color: var(--text-primary); letter-spacing: var(--tracking-tight); }
-.mission-tagline { font-family: var(--font-serif); font-style: italic; font-size: var(--text-lg); color: var(--text-secondary); line-height: var(--leading-snug); }
-.mission-desc { font-size: var(--text-base); color: var(--text-secondary); line-height: var(--leading-relaxed); flex: 1; }
-.mission-footer { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.mission-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.mission-card:hover .mission-photo { transform: scale(1.05); }
+.mission-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,23,41,.88) 0%, rgba(0,23,41,.25) 55%, rgba(0,23,41,0) 100%);
+}
+.mission-content {
+  position: relative;
+  z-index: 1;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mission-category {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--nu-tour);
+}
+.mission-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--text-3xl);
+  color: #fff;
+  letter-spacing: var(--tracking-tight);
+}
+.mission-tagline {
+  font-size: var(--text-base);
+  color: rgba(255,255,255,.8);
+  line-height: var(--leading-snug);
+}
+.mission-cta {
+  margin-top: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: #fff;
+}
+.mission-hit { position: absolute; inset: 0; z-index: 3; }
 
-.stats-strip { background: var(--bg-dark); color: var(--text-on-dark); padding: clamp(40px, 5vw, 56px) 0; }
-.stats-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 40px); align-items: center; }
+.stats-strip { background: var(--bg-dark); color: var(--text-on-dark); padding: clamp(40px, 5vw, 56px) 0; position: relative; overflow: hidden; }
+.stats-strip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700' viewBox='0 0 700 700'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.06' stroke-width='1.5'%3E%3Ccircle cx='110' cy='580' r='45'/%3E%3Ccircle cx='110' cy='580' r='90'/%3E%3Ccircle cx='110' cy='580' r='140'/%3E%3Ccircle cx='110' cy='580' r='195'/%3E%3Ccircle cx='110' cy='580' r='255'/%3E%3Ccircle cx='620' cy='90' r='40'/%3E%3Ccircle cx='620' cy='90' r='80'/%3E%3Ccircle cx='620' cy='90' r='125'/%3E%3Ccircle cx='620' cy='90' r='175'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: center;
+  background-size: min(90vw, 700px);
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+.stats-inner { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 40px); align-items: center; }
 @media (min-width: 768px) { .stats-inner { grid-template-columns: repeat(4, 1fr); } }
 .stat-item { text-align: center; }
 .stat-item strong { display: block; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--accent-gold); margin-bottom: 4px; }
@@ -369,11 +412,8 @@ onUnmounted(() => {
 .badge-teal { background: rgba(0,104,187,.15) !important; color: #0068bb !important; }
 
 /* ── Hardcoded backgrounds ── */
-.section { background: #fbd945 !important; }
-.section .section-sub { color: rgba(26,46,66,.8) !important; }
-.section .mission-card { background: #ffffff !important; }
-.visit-cta { background: #fbd945 !important; }
-.visit-cta .eyebrow-teal { color: #0068bb !important; }
+.section { background: #ffffff !important; }
+.visit-cta { background: #ffffff !important; }
 .visit-card { background: #ffffff !important; backdrop-filter: blur(12px) !important; }
 .stats-strip { background: #0068bb !important; color: #fff !important; }
 .stats-strip .stat-item strong { color: #fbd945 !important; }
@@ -383,7 +423,7 @@ onUnmounted(() => {
 
 /* ── Reel Section ── */
 .reel-section {
-  background: #1a2e42;
+  background: #ffffff;
   padding: 40px 0;
 }
 .reel {
