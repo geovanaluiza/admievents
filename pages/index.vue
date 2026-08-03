@@ -17,14 +17,30 @@ const reelItems = [
 ]
 
 let reloadTimer: ReturnType<typeof setInterval> | null = null
+let inactivityTimer: ReturnType<typeof setTimeout> | null = null
+
+function resetInactivityTimer() {
+  if (inactivityTimer) clearTimeout(inactivityTimer)
+  inactivityTimer = setTimeout(() => {
+    window.location.href = '/'
+  }, 60 * 1000)
+}
+
+function cleanupInactivityListeners() {
+  const events = ['mousedown', 'touchstart', 'keydown', 'scroll']
+  events.forEach(evt => window.removeEventListener(evt, resetInactivityTimer))
+  if (inactivityTimer) clearTimeout(inactivityTimer)
+}
 
 onMounted(() => {
-  reloadTimer = setInterval(() => {
-    window.location.reload()
-  }, 5 * 60 * 1000)
+  const events = ['mousedown', 'touchstart', 'keydown', 'scroll']
+  events.forEach(evt => window.addEventListener(evt, resetInactivityTimer, { passive: true }))
+  resetInactivityTimer()
+  reloadTimer = setInterval(() => { window.location.reload() }, 5 * 60 * 1000)
 })
 
 onUnmounted(() => {
+  cleanupInactivityListeners()
   if (reloadTimer) clearInterval(reloadTimer)
 })
 </script>
