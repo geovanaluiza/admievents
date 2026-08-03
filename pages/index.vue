@@ -135,7 +135,7 @@ onUnmounted(() => {
           </article>
 
           <article class="mission-card reveal">
-            <img class="mission-photo" src="https://www-dev.northwestu.edu/assets/images/tests/CampusStudying-0190.jpg" alt="Students studying together on campus" loading="lazy" />
+            <img class="mission-photo" src="https://www-dev.northwestu.edu/assets/images/tests/160407_campusphotos_1546.jpg" alt="Students working together in a classroom" loading="lazy" />
             <div class="mission-scrim" aria-hidden="true"></div>
             <div class="mission-content">
               <p class="mission-category">Scholarship</p>
