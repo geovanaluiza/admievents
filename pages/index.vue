@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue'
+
 useSeoMeta({
   title: 'Visit Northwest University — Admissions Events',
   description: 'Discover NU, NU Overnight, and more. Tour the campus, meet our community, and find your place at Northwest University in Kirkland, WA.',
@@ -13,6 +15,18 @@ const reelItems = [
   { img: 'https://www-dev.northwestu.edu/assets/images/tests/FallDay231108--2.jpg', category: 'At church', title: 'Northwest Partnership Program', link: 'https://www-dev.northwestu.edu/partnership', accent: '#000', textLight: true },
   { img: 'https://www-dev.northwestu.edu/assets/images/tests/CommunityCrewKickoff-.jpg', category: 'In high school', title: 'Concurrent credit', link: 'https://www-dev.northwestu.edu/concurrent', accent: '#000', textLight: true },
 ]
+
+let reloadTimer: ReturnType<typeof setInterval> | null = null
+
+onMounted(() => {
+  reloadTimer = setInterval(() => {
+    window.location.reload()
+  }, 5 * 60 * 1000)
+})
+
+onUnmounted(() => {
+  if (reloadTimer) clearInterval(reloadTimer)
+})
 </script>
 
 <template>
