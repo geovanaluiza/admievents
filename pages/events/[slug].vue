@@ -47,6 +47,7 @@ const filteredFaqs = computed(() => {
 })
 
 const badgeName = ref('')
+const videoPlaying = ref(false)
 
 const printPage = () => window.print()
 </script>
@@ -125,17 +126,27 @@ const printPage = () => window.print()
         <!-- Video placeholder -->
         <div class="video-placeholder">
           <div class="video-thumb">
-            <img :src="event.videoPlaceholder.thumbnail" :alt="event.videoPlaceholder.label" loading="eager" />
-            <div class="video-overlay">
-              <button class="play-ring" :aria-label="`Play: ${event.videoPlaceholder.label}`">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </button>
-            </div>
+            <iframe
+              v-if="videoPlaying && event.videoPlaceholder.embedUrl"
+              :src="`${event.videoPlaceholder.embedUrl}?autoplay=1&rel=0`"
+              :title="event.videoPlaceholder.label"
+              class="video-iframe"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <template v-else>
+              <img :src="event.videoPlaceholder.thumbnail" :alt="event.videoPlaceholder.label" loading="eager" />
+              <div class="video-overlay">
+                <button class="play-ring" :aria-label="`Play: ${event.videoPlaceholder.label}`" @click="event.videoPlaceholder.embedUrl && (videoPlaying = true)">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+              </div>
+            </template>
           </div>
           <p class="video-label">{{ event.videoPlaceholder.label }}</p>
-          <span class="video-note badge badge-dark">Placeholder — video coming soon</span>
+          <span v-if="!event.videoPlaceholder.embedUrl" class="video-note badge badge-dark">Placeholder — video coming soon</span>
         </div>
       </div>
     </section>
@@ -599,6 +610,13 @@ const printPage = () => window.print()
 .video-thumb img {
   width: 100%; height: 100%;
   object-fit: cover;
+}
+.video-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 .video-overlay {
   position: absolute;

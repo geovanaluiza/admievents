@@ -8,16 +8,18 @@ useSeoMeta({
 })
 
 const reelItems = [
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/170923_nu_color_run_for_hope_9189.jpg', category: 'On-campus', title: 'Undergraduate admissions', link: 'https://www-dev.northwestu.edu/admissions', accent: '#000', textLight: true },
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/160407_campusphotos_1546.jpg', category: 'Anytime/Anywhere', title: 'Online programs', link: 'https://www-dev.northwestu.edu/online', accent: '#fbd945', textLight: false },
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/240613CMHC_Event--9.jpg', category: 'On-campus', title: 'Graduate degrees', link: 'https://www-dev.northwestu.edu/graduate', accent: '#fff', textLight: false },
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/CampusStudying-0190.jpg', category: 'On-campus', title: 'International education', link: 'https://www-dev.northwestu.edu/international', accent: '#000', textLight: true },
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/FallDay231108--2.jpg', category: 'At church', title: 'Northwest Partnership Program', link: 'https://www-dev.northwestu.edu/partnership', accent: '#000', textLight: true },
-  { img: 'https://www-dev.northwestu.edu/assets/images/tests/CommunityCrewKickoff-.jpg', category: 'In high school', title: 'Concurrent credit', link: 'https://www-dev.northwestu.edu/concurrent', accent: '#000', textLight: true },
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/170923_nu_color_run_for_hope_9189.jpg', title: 'Undergraduate admissions', link: 'https://www-dev.northwestu.edu/admissions' },
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/160407_campusphotos_1546.jpg', title: 'Online programs', link: 'https://www-dev.northwestu.edu/online' },
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/240613CMHC_Event--9.jpg', title: 'Graduate degrees', link: 'https://www-dev.northwestu.edu/graduate' },
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/CampusStudying-0190.jpg', title: 'International education', link: 'https://www-dev.northwestu.edu/international' },
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/FallDay231108--2.jpg', title: 'Northwest Partnership Program', link: 'https://www-dev.northwestu.edu/partnership' },
+  { img: 'https://www-dev.northwestu.edu/assets/images/tests/CommunityCrewKickoff-.jpg', title: 'Concurrent credit', link: 'https://www-dev.northwestu.edu/concurrent' },
 ]
 
 let reloadTimer: ReturnType<typeof setInterval> | null = null
 let inactivityTimer: ReturnType<typeof setTimeout> | null = null
+
+const homeVideoPlaying = ref(false)
 
 function resetInactivityTimer() {
   if (inactivityTimer) clearTimeout(inactivityTimer)
@@ -86,15 +88,33 @@ onUnmounted(() => {
             <li v-for="item in reelItems" :key="item.link">
               <div class="reel-item">
                 <img :src="item.img" :alt="item.title">
-                <div class="reel-gradient" :style="{ background: `linear-gradient(-25deg, transparent 55%, ${item.accent})` }" />
-                <div :class="['reel-content', item.textLight ? 'reel-content-light' : 'reel-content-dark']">
-                  <p class="reel-category">{{ item.category }}</p>
-                  <h4 class="reel-title">{{ item.title }}</h4>
-                </div>
-                <a :href="item.link" class="reel-link" target="_blank" rel="noopener" />
+                <a :href="item.link" class="reel-link" target="_blank" rel="noopener" :aria-label="item.title" />
               </div>
             </li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <div class="container">
+        <div class="home-video reveal">
+          <iframe
+            v-if="homeVideoPlaying"
+            src="https://www.youtube.com/embed/UGxjeZtmvaE?autoplay=1&rel=0"
+            title="Northwest University campus video"
+            class="home-video-iframe"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <template v-else>
+            <img src="https://i.ytimg.com/vi/UGxjeZtmvaE/maxresdefault.jpg" alt="Northwest University campus video" loading="lazy" />
+            <button class="play-ring" aria-label="Play campus video" @click="homeVideoPlaying = true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </button>
+          </template>
         </div>
       </div>
     </section>
@@ -421,6 +441,48 @@ onUnmounted(() => {
 .stats-strip .stat-divider { background: rgba(255,255,255,.25) !important; }
 .hero { background: #0068bb !important; color: #fff !important; }
 
+/* ── Home video ── */
+.video-section { background: #ffffff; padding: 0 0 clamp(40px, 5vw, 56px); }
+.home-video {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  max-width: 900px;
+  margin-inline: auto;
+  box-shadow: var(--shadow-xl);
+}
+.home-video img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.home-video-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.play-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.92);
+  border: 2px solid rgba(0,104,187,.4);
+  color: #0068bb;
+  display: grid; place-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: background var(--dur-fast) ease, transform var(--dur-fast) var(--ease-spring);
+}
+.play-ring:hover { background: #fff; transform: translate(-50%, -50%) scale(1.1); }
+
 /* ── Reel Section ── */
 .reel-section {
   background: #ffffff;
@@ -458,36 +520,9 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease-out);
 }
-.reel-gradient {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-.reel-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 24px;
-}
-.reel-content-light { color: #fff; }
-.reel-content-dark { color: #1a2e42; }
-.reel-category {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin: 0 0 8px;
-  opacity: 0.9;
-}
-.reel-title {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.3rem;
-  line-height: 1.2;
-  margin: 0;
-}
+.reel-item:hover img { transform: scale(1.04); }
 .reel-link {
   position: absolute;
   inset: 0;

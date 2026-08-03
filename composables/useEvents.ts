@@ -71,8 +71,9 @@ const EVENTS: EventData[] = [
     description: 'Discover NU is our signature open house event. Spend the day on campus, meet professors and current students, and get all your questions answered by our admissions team. Bring the whole crew — parents, guardians, and anyone who wants to know what makes this place special.',
     heroImage: 'https://www-dev.northwestu.edu/assets/images/tests/FallDay231108--2.jpg',
     videoPlaceholder: {
-      thumbnail: 'https://www-dev.northwestu.edu/assets/images/tests/CampusStudying-0190.jpg',
+      thumbnail: 'https://i.ytimg.com/vi/UGxjeZtmvaE/maxresdefault.jpg',
       label: 'What to expect at Discover NU',
+      embedUrl: 'https://www.youtube.com/embed/UGxjeZtmvaE',
     },
     registrationUrl: 'https://www.northwestu.edu/visit/discover-nu',
     swoopShopUrl: 'https://shop.northwestu.edu',
@@ -152,8 +153,9 @@ const EVENTS: EventData[] = [
     description: 'NU Overnight is the closest you can get to being a student without enrolling. You\'ll stay in a residence hall with a trained, background-checked student host, eat dinner and breakfast in Sæter, sit in on real morning classes, and experience chapel and campus life after dark. Six dates across the school year — pick the one that fits your schedule.',
     heroImage: 'https://www-dev.northwestu.edu/assets/images/tests/240613CMHC_Event--9.jpg',
     videoPlaceholder: {
-      thumbnail: 'https://www-dev.northwestu.edu/assets/images/tests/CommunityCrewKickoff-.jpg',
+      thumbnail: 'https://i.ytimg.com/vi/UGxjeZtmvaE/maxresdefault.jpg',
       label: 'What NU Overnight is really like',
+      embedUrl: 'https://www.youtube.com/embed/UGxjeZtmvaE',
     },
     registrationUrl: 'https://www.northwestu.edu/visit/nu-overnight',
     swoopShopUrl: 'https://shop.northwestu.edu',

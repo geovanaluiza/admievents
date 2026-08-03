@@ -378,12 +378,12 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-BZ3b8tge.js")
+    component: () => import("./_nuxt/index-Cbu6XUHd.js")
   },
   {
     name: "events-slug",
     path: "/events/:slug()",
-    component: () => import("./_nuxt/_slug_-BMiyLK4v.js")
+    component: () => import("./_nuxt/_slug_-B2nfdpdb.js")
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
