@@ -483,9 +483,6 @@ onUnmounted(() => {
 
 .section-title { color: var(--nu-blue) !important; font-family: var(--font-display); font-weight: 800; font-size: clamp(2.2rem, 5vw, 3.4rem) !important; letter-spacing: var(--tracking-tight); line-height: 1.05; text-transform: none; }
 .section-sub { color: #4a5568 !important; }
-.mission-name { color: #1a2e42 !important; }
-.mission-tagline { color: #4a5568 !important; }
-.mission-desc { color: #4a5568 !important; }
 .visit-title { color: #1a2e42 !important; }
 .visit-sub { color: #4a5568 !important; }
 .badge-gold { background: rgba(251,217,69,.2) !important; color: #85754e !important; }
