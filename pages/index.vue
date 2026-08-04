@@ -12,6 +12,57 @@ let inactivityTimer: ReturnType<typeof setTimeout> | null = null
 
 const homeVideoPlaying = ref(false)
 
+const upcomingEvents = [
+  {
+    title: 'Discover NU',
+    date: 'September 18, 2026',
+    time: '8:30 am',
+    location: 'Northwest University',
+    description: 'A firsthand look at campus life — welcome, worship, a guided tour, lunch, and afternoon sessions chosen by you.',
+    icon: 'mountain',
+  },
+  {
+    title: 'Discover NU',
+    date: 'October 16, 2026',
+    time: '8:30 am',
+    location: 'Northwest University',
+    description: 'A firsthand look at campus life — welcome, worship, a guided tour, lunch, and afternoon sessions chosen by you.',
+    icon: 'mountain',
+  },
+  {
+    title: 'NU Overnight',
+    date: 'November 5, 2026',
+    time: '4:30 pm',
+    location: 'Northwest University Campus',
+    description: 'Spend the night in a residence hall and experience what it is like to be an NU Eagle.',
+    icon: 'moon',
+  },
+  {
+    title: 'Nursing Info Session',
+    date: 'November 11, 2026',
+    time: '1:00 pm',
+    location: 'Northwest University Campus',
+    description: 'Meet Nursing professors, talk to current students, and learn what makes NU\'s Nursing Program stand out.',
+    icon: 'users',
+  },
+  {
+    title: 'Discover NU',
+    date: 'November 23, 2026',
+    time: '8:30 am',
+    location: 'Northwest University',
+    description: 'A firsthand look at campus life — welcome, worship, a guided tour, lunch, and afternoon sessions chosen by you.',
+    icon: 'mountain',
+  },
+  {
+    title: 'Discover NU',
+    date: 'January 29, 2027',
+    time: '8:30 am',
+    location: 'Northwest University',
+    description: 'A firsthand look at campus life — welcome, worship, a guided tour, lunch, and afternoon sessions chosen by you.',
+    icon: 'mountain',
+  },
+]
+
 function resetInactivityTimer() {
   if (inactivityTimer) clearTimeout(inactivityTimer)
   inactivityTimer = setTimeout(() => {
@@ -47,7 +98,7 @@ onUnmounted(() => {
     <section class="hero">
       <img
         class="hero-bg"
-        src="/images/WW_2025_Day1-2605.jpg"
+        src="https://www-dev.northwestu.edu/assets/images/tests/170923_nu_color_run_for_hope_9189.jpg"
         alt=""
         aria-hidden="true"
       />
@@ -134,6 +185,35 @@ onUnmounted(() => {
             </svg>
           </button>
         </template>
+      </div>
+    </section>
+
+    <section class="upcoming-events">
+      <div class="container">
+        <header class="section-head reveal">
+          <hr class="divider" aria-hidden="true" />
+          <p class="eyebrow">Upcoming events</p>
+          <h2 class="section-title">See you on campus soon.</h2>
+          <p class="section-sub">All visit events are free. Register online, pick the date that fits, and we'll send your nametag in the mail.</p>
+        </header>
+
+        <ul class="events-list">
+          <li v-for="(ev, i) in upcomingEvents" :key="i" class="event-row reveal">
+            <span class="event-icon" :aria-hidden="true">
+              <EventIcon :name="ev.icon" :size="22" />
+            </span>
+            <div class="event-body">
+              <div class="event-meta">
+                <span class="event-date">{{ ev.date }}</span>
+                <span class="event-time">{{ ev.time }}</span>
+              </div>
+              <h3 class="event-title">{{ ev.title }}</h3>
+              <p class="event-location">{{ ev.location }}</p>
+              <p class="event-desc">{{ ev.description }}</p>
+            </div>
+            <a href="https://www.northwestu.edu/visit" target="_blank" rel="noopener" class="event-cta">Register →</a>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -409,6 +489,93 @@ onUnmounted(() => {
   color: #fbd945;
 }
 .mission-hit { position: absolute; inset: 0; z-index: 3; }
+
+/* ── Upcoming events ── */
+.upcoming-events {
+  background: #ffffff;
+  padding: clamp(72px, 9vw, 120px) 0;
+  border-top: 1px solid var(--border-subtle);
+}
+.upcoming-events .section-head { margin-bottom: clamp(40px, 5vw, 64px); max-width: 720px; }
+.upcoming-events .section-sub { color: var(--text-secondary) !important; font-size: var(--text-lg); margin-top: 12px; }
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.event-row {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 28px;
+  align-items: center;
+  padding: clamp(20px, 3vw, 28px) 0;
+  border-top: 1px solid var(--border-subtle);
+}
+.event-row:last-child { border-bottom: 1px solid var(--border-subtle); }
+.event-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0,104,187,.1);
+  color: var(--nu-blue);
+  display: grid;
+  place-items: center;
+}
+.event-body { display: flex; flex-direction: column; gap: 4px; }
+.event-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.event-date {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  color: var(--nu-blue);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+}
+.event-time {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.event-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.6vw, 1.75rem);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.15;
+  margin-top: 2px;
+}
+.event-location {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+.event-desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--leading-snug);
+  margin-top: 6px;
+  max-width: 60ch;
+}
+.event-cta {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--nu-blue);
+  white-space: nowrap;
+}
+.event-cta:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 640px) {
+  .event-row { grid-template-columns: 44px 1fr; }
+  .event-cta { grid-column: 2; padding-top: 6px; }
+}
 
 /* ── Key facts ── */
 .key-facts {

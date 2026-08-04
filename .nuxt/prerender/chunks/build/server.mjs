@@ -400,12 +400,12 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-C-p3xBqF.mjs')
+    component: () => import('./index-6VslIu-u.mjs')
   },
   {
     name: "events-slug",
     path: "/events/:slug()",
-    component: () => import('./_slug_-B2nfdpdb.mjs')
+    component: () => import('./_slug_-Cd-XZZcy.mjs')
   }
 ];
 const ROUTE_KEY_PARENTHESES_RE = /(:\w+)\([^)]+\)/g;
